@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode: White and Green */
+  --background: 0 0% 100%;
+  --foreground: 142 50% 20%;
+  --primary: 142 71% 45%;
+  --secondary: 142 30% 96%;
+  --accent: 142 71% 45%;
+  --muted: 142 20% 92%;
+  --border: 142 20% 88%;
+}
+
+.dark {
+  /* Dark mode: Black and Green */
+  --background: 0 0% 0%;
+  --foreground: 142 30% 85%;
+  --primary: 142 71% 45%;
+  --secondary: 142 20% 12%;
+  --accent: 142 71% 45%;
+  --muted: 142 15% 15%;
+  --border: 142 15% 20%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
