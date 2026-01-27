@@ -9,7 +9,6 @@ import Publications from "@/components/Publications";
 import Achievements from "@/components/Achievements";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
 export const dynamic = 'force-dynamic';
 
@@ -27,7 +26,6 @@ export default function Home() {
       <Achievements />
       <Certifications />
       <Contact />
-      <Footer />
     </main>
   );
 }

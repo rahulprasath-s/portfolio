@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin, Github } from "lucide-react";
+import { Send, ChevronUp, Mail, Linkedin, Github } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -28,7 +29,7 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
         setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("error");
@@ -40,42 +41,69 @@ export default function Contact() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="container mx-auto max-w-4xl">
-        <motion.h2
-          className="text-4xl font-bold text-center mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Get In Touch
-        </motion.h2>
+    <>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div className="container mx-auto max-w-4xl">
+          {/* Contact Title */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="border-2 border-black dark:border-white px-8 py-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white uppercase tracking-wider">
+                Contact
+              </h2>
+            </div>
+          </motion.div>
 
-        <motion.p
-          className="text-center text-foreground/80 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          I&apos;m always open to discussing new opportunities and interesting projects.
-        </motion.p>
+          {/* Intro Text */}
+          <motion.p
+            className="text-center text-gray-600 dark:text-gray-400 mb-8 text-sm sm:text-base max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            I&apos;m always open to discussing new opportunities and interesting projects. Feel free to reach out!
+          </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          {/* Decorative Separator */}
+          <motion.div
+            className="flex items-center justify-center mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
+            <div className="h-px w-16 bg-gray-400 dark:bg-gray-600" />
+            <div className="mx-4 w-2 h-2 bg-gray-400 dark:bg-gray-600 rounded-full" />
+            <div className="h-px flex-1 max-w-xs bg-gray-400 dark:bg-gray-600" />
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.form
+            onSubmit={handleSubmit}
+            className="space-y-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
+              <label
+                htmlFor="name"
+                className="block text-sm font-semibold mb-2 text-black dark:text-white uppercase tracking-wide"
+              >
+                Enter Your Name *
               </label>
               <input
                 type="text"
@@ -83,12 +111,16 @@ export default function Contact() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-black dark:border-white focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 text-black dark:text-white transition-colors"
               />
             </div>
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
+              <label
+                htmlFor="email"
+                className="block text-sm font-semibold mb-2 text-black dark:text-white uppercase tracking-wide"
+              >
+                Enter Your Email *
               </label>
               <input
                 type="email"
@@ -96,92 +128,152 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-black dark:border-white focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 text-black dark:text-white transition-colors"
               />
             </div>
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
+              <label
+                htmlFor="phone"
+                className="block text-sm font-semibold mb-2 text-black dark:text-white uppercase tracking-wide"
+              >
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className="w-full px-0 py-2 bg-transparent border-0 border-b-2 border-black dark:border-white focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 text-black dark:text-white transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-semibold mb-2 text-black dark:text-white uppercase tracking-wide"
+              >
+                Your Message *
               </label>
               <textarea
                 id="message"
                 required
-                rows={5}
+                rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                className="w-full px-4 py-3 bg-transparent border-2 border-black dark:border-white focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 text-black dark:text-white transition-colors resize-none"
               />
             </div>
-            <motion.button
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full px-6 py-3 bg-primary text-background rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
-              whileHover={{ scale: status === "loading" ? 1 : 1.02 }}
-              whileTap={{ scale: status === "loading" ? 1 : 0.98 }}
-            >
-              {status === "loading" ? (
-                "Sending..."
-              ) : status === "success" ? (
-                "Sent!"
-              ) : status === "error" ? (
-                "Error - Try Again"
-              ) : (
-                <>
-                  <Send className="w-5 h-5" />
-                  Send Message
-                </>
-              )}
-            </motion.button>
-          </motion.form>
 
-          {/* Contact Info */}
+            {/* Submit Button */}
+            <div className="flex justify-center pt-4">
+              <motion.button
+                type="submit"
+                disabled={status === "loading"}
+                className="relative px-12 py-3 text-black dark:text-white font-semibold uppercase tracking-wider disabled:opacity-50 transition-opacity"
+                whileHover={{ scale: status === "loading" ? 1 : 1.05 }}
+                whileTap={{ scale: status === "loading" ? 1 : 0.95 }}
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  {status === "loading" ? (
+                    "Sending..."
+                  ) : status === "success" ? (
+                    "Sent!"
+                  ) : status === "error" ? (
+                    "Error - Try Again"
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Submit
+                    </>
+                  )}
+                </span>
+                <div className="absolute left-0 top-0 bottom-0 w-px bg-black dark:bg-white" />
+                <div className="absolute right-0 top-0 bottom-0 w-px bg-black dark:bg-white" />
+              </motion.button>
+            </div>
+          </motion.form>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="bg-black dark:bg-gray-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          {/* Back to Top */}
           <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="flex flex-col items-center mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.button
+              onClick={scrollToTop}
+              className="flex flex-col items-center gap-2 text-white/80 hover:text-white transition-colors uppercase tracking-wider text-sm"
+              whileHover={{ y: -5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ChevronUp className="w-6 h-6" />
+              <span>Back to Top</span>
+            </motion.button>
+          </motion.div>
+
+          {/* Social Media Icons */}
+          <motion.div
+            className="flex justify-center gap-6 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {personalInfo.email && (
+              <motion.a
+                href={`mailto:${personalInfo.email}`}
+                className="text-white/80 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Mail className="w-6 h-6" />
+              </motion.a>
+            )}
+            {personalInfo.linkedin && (
+              <motion.a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Linkedin className="w-6 h-6" />
+              </motion.a>
+            )}
+            {personalInfo.github && (
+              <motion.a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/80 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Github className="w-6 h-6" />
+              </motion.a>
+            )}
+          </motion.div>
+
+          {/* Copyright */}
+          <motion.p
+            className="text-center text-white/60 text-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div>
-              <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-              <div className="space-y-4">
-                {personalInfo.email && (
-                  <a
-                    href={`mailto:${personalInfo.email}`}
-                    className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors"
-                  >
-                    <Mail className="w-5 h-5" />
-                    <span>{personalInfo.email}</span>
-                  </a>
-                )}
-                {personalInfo.linkedin && (
-                  <a
-                    href={personalInfo.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                    <span>LinkedIn</span>
-                  </a>
-                )}
-                {personalInfo.github && (
-                  <a
-                    href={personalInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-foreground/80 hover:text-primary transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                    <span>GitHub</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </motion.div>
+            © {new Date().getFullYear()} {personalInfo.name} All Rights Reserved.
+          </motion.p>
         </div>
-      </div>
-    </section>
+      </footer>
+    </>
   );
 }
-
