@@ -18,6 +18,7 @@ Place all your images and videos in the `/public` folder.
 For each project, you can add an image. Name them as follows:
 
 ### Project Images
+- **Careflow Intelligence:** `/public/project-careflow-intelligence.jpg`
 - **Medical Report Summariser:** `/public/project-medical-report.jpg`
 - **AI-Daily-Brief:** `/public/project-ai-daily-brief.jpg`
 - **FabricIRIS:** `/public/project-fabriciris.jpg`

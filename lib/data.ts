@@ -87,6 +87,8 @@ export const skills: Skill[] = [
   { name: "Prompt Engineering", category: "AI & Generative AI" },
   { name: "Deep Learning", category: "AI & Generative AI" },
   { name: "Vector Database", category: "AI & Generative AI" },
+  { name: "Qdrant", category: "AI & Generative AI" },
+  { name: "Ollama", category: "AI & Generative AI" },
   { name: "Optical Character Recognition", category: "AI & Generative AI" },
   
   // Workflow Automation
@@ -116,6 +118,7 @@ export const skills: Skill[] = [
   { name: "Google Gemini API", category: "Frameworks & Libraries" },
   
   // Software Development / Backend
+  { name: "FastAPI", category: "Backend Development" },
   { name: "Express.js", category: "Backend Development" },
   { name: "MongoDB", category: "Backend Development" },
   { name: "Node.js", category: "Backend Development" },
@@ -125,9 +128,13 @@ export const skills: Skill[] = [
   { name: "CSS", category: "Backend Development" },
   { name: "API Integration", category: "Backend Development" },
   { name: "Backend Automation", category: "Backend Development" },
+  { name: "Microservices Architecture", category: "Backend Development" },
+  { name: "Docker Compose", category: "Backend Development" },
   
   // Tools
   { name: "Docker", category: "Tools" },
+  { name: "Docker Compose", category: "Tools" },
+  { name: "Containerization", category: "Tools" },
   { name: "Git", category: "Tools" },
   { name: "Amazon Web Services", category: "Tools" },
   { name: "VS Code", category: "Tools" },
@@ -157,6 +164,15 @@ export interface Certification {
 }
 
 export const projects: Project[] = [
+  {
+    id: "careflow-intelligence",
+    title: "Careflow Intelligence: A Secure Local RAG System",
+    description: "Architected a fully offline, privacy-first Retrieval-Augmented Generation (RAG) system to enable secure querying of sensitive medical PDF documents with zero cloud data egress.",
+    longDescription: "Architected a fully offline, privacy-first Retrieval-Augmented Generation (RAG) system to enable secure querying of sensitive medical PDF documents with zero cloud data egress. Orchestrated a containerized microservices architecture using Docker and Docker Compose to integrate a Streamlit frontend, FastAPI ingestion backend, and Qdrant vector database. Optimized inference performance for edge computing by deploying lightweight, quantized LLMs (Qwen2-0.5B) via Ollama, achieving real-time reasoning on standard consumer hardware.",
+    technologies: ["Docker", "Ollama", "Qdrant", "FastAPI", "Streamlit", "n8n", "RAG", "Python", "LLM"],
+    category: "AI & Machine Learning",
+    image: "/project-careflow-intelligence.jpg",
+  },
   {
     id: "medical-report-summariser",
     title: "Medical Report Summariser",
