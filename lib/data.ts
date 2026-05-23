@@ -90,12 +90,18 @@ export const skills: Skill[] = [
   { name: "Qdrant", category: "AI & Generative AI" },
   { name: "Ollama", category: "AI & Generative AI" },
   { name: "Optical Character Recognition", category: "AI & Generative AI" },
+  { name: "Anthropic API", category: "AI & Generative AI" },
+  { name: "Prompt Caching", category: "AI & Generative AI" },
+  { name: "Structured Output", category: "AI & Generative AI" },
   
   // Workflow Automation
   { name: "Agentic Workflows", category: "Workflow Automation" },
   { name: "Chain-of-Thought Prompting", category: "Workflow Automation" },
   { name: "LLM Ops", category: "Workflow Automation" },
   { name: "N8N", category: "Workflow Automation" },
+  { name: "Context Compression", category: "Workflow Automation" },
+  { name: "Filesystem Watchers", category: "Workflow Automation" },
+  { name: "Usage Analytics", category: "Workflow Automation" },
   
   // Programming Languages
   { name: "Python", category: "Programming Languages" },
@@ -111,6 +117,10 @@ export const skills: Skill[] = [
   { name: "OpenCV", category: "Frameworks & Libraries" },
   { name: "Streamlit", category: "Frameworks & Libraries" },
   { name: "React", category: "Frameworks & Libraries" },
+  { name: "Vite", category: "Frameworks & Libraries" },
+  { name: "Three.js", category: "Frameworks & Libraries" },
+  { name: "React Three Fiber", category: "Frameworks & Libraries" },
+  { name: "Drei", category: "Frameworks & Libraries" },
   { name: "Pandas", category: "Frameworks & Libraries" },
   { name: "NumPy", category: "Frameworks & Libraries" },
   { name: "Matplotlib", category: "Frameworks & Libraries" },
@@ -121,6 +131,7 @@ export const skills: Skill[] = [
   { name: "FastAPI", category: "Backend Development" },
   { name: "Express.js", category: "Backend Development" },
   { name: "MongoDB", category: "Backend Development" },
+  { name: "Mongoose", category: "Backend Development" },
   { name: "Node.js", category: "Backend Development" },
   { name: "SQL", category: "Backend Development" },
   { name: "PostgreSQL", category: "Backend Development" },
@@ -130,6 +141,8 @@ export const skills: Skill[] = [
   { name: "Backend Automation", category: "Backend Development" },
   { name: "Microservices Architecture", category: "Backend Development" },
   { name: "Docker Compose", category: "Backend Development" },
+  { name: "REST API Design", category: "Backend Development" },
+  { name: "Geospatial Data Processing", category: "Backend Development" },
   
   // Tools
   { name: "Docker", category: "Tools" },
@@ -139,6 +152,11 @@ export const skills: Skill[] = [
   { name: "Amazon Web Services", category: "Tools" },
   { name: "VS Code", category: "Tools" },
   { name: "MS Office 365", category: "Tools" },
+  { name: "CLI Tooling", category: "Tools" },
+  { name: "Google Maps Platform", category: "Tools" },
+  { name: "OpenStreetMap", category: "Tools" },
+  { name: "GLB Export", category: "Tools" },
+  { name: "3D Building Visualization", category: "Tools" },
 ];
 
 export interface Publication {
@@ -164,6 +182,24 @@ export interface Certification {
 }
 
 export const projects: Project[] = [
+  {
+    id: "local-workspace-context-optimizer",
+    title: "Local Workspace Context Optimizer",
+    description: "Privacy-first developer tool that compresses local workspace state into reusable context capsules, cutting repeated LLM token usage with prompt caching and structured outputs.",
+    longDescription: "Built a privacy-first context lifecycle manager for local development workflows using Python, Anthropic prompt caching, and strict structured outputs. The system scans repositories, filters sensitive files, generates deterministic context capsules, tracks token savings, and exposes both a CLI and local web UI for warming cache, querying Claude, and monitoring workspace changes in real time.",
+    technologies: ["Python", "Anthropic API", "Prompt Caching", "Structured Output", "CLI Tooling", "Filesystem Watchers"],
+    category: "Developer Tools",
+    image: "/local-workspace-context-optimizer.png",
+  },
+  {
+    id: "archisight",
+    title: "Archisight",
+    description: "Full-stack 3D building visualization app that turns searched or manually traced footprints into exportable massing models with roof controls and geospatial fallbacks.",
+    longDescription: "Developed a full-stack geospatial visualization app for searching buildings, tracing footprints on satellite maps, and generating realistic 3D massing models. Combined React, Three.js, Google Maps, Express, and MongoDB to support footprint inference, roof-style controls, estimated building height, and GLB export for interactive architectural exploration.",
+    technologies: ["React", "Three.js", "Google Maps Platform", "Express.js", "MongoDB", "GLB Export"],
+    category: "3D Visualization",
+    image: "/archi-sight.jpg",
+  },
   {
     id: "careflow-intelligence",
     title: "Careflow Intelligence: A Secure Local RAG System",
@@ -241,4 +277,3 @@ export const certifications: Certification[] = [
   { title: "Blockchain Workshop", issuer: "Various" },
   { title: "Expert's session in Cyber Security", issuer: "Various" },
 ];
-

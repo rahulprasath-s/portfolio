@@ -23,6 +23,21 @@ export default function Projects() {
       ? projects
       : projects.filter((p) => (p.category || "Other") === filter);
 
+  const getFallbackAccent = (category?: string) => {
+    switch (category) {
+      case "Developer Tools":
+        return "from-emerald-500/25 via-cyan-500/20 to-blue-500/25";
+      case "3D Visualization":
+        return "from-orange-500/25 via-rose-500/20 to-fuchsia-500/25";
+      case "Workflow Automation":
+        return "from-violet-500/25 via-indigo-500/20 to-sky-500/25";
+      case "Computer Vision":
+        return "from-amber-500/25 via-orange-500/20 to-red-500/25";
+      default:
+        return "from-blue-500/20 via-purple-500/20 to-pink-500/20";
+    }
+  };
+
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl">
@@ -79,17 +94,29 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project.id)}
                 layout
               >
-                {project.image && (
-                  <div className="relative w-full h-48 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 overflow-hidden">
+                <div className={`relative w-full h-48 bg-gradient-to-br ${getFallbackAccent(project.category)} overflow-hidden`}>
+                  {project.image ? (
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                )}
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col justify-between p-5">
+                      <span className="self-start rounded-full border border-white/30 bg-black/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
+                        {project.category || "Project"}
+                      </span>
+                      <div>
+                        <p className="text-sm uppercase tracking-[0.35em] text-white/70">Featured Build</p>
+                        <h3 className="mt-2 max-w-[14rem] text-2xl font-bold leading-tight text-white">
+                          {project.title}
+                        </h3>
+                      </div>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
@@ -234,4 +261,3 @@ export default function Projects() {
     </section>
   );
 }
-
