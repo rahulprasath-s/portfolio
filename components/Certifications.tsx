@@ -10,7 +10,7 @@ export default function Certifications() {
   }
 
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950">
       <div className="container mx-auto max-w-6xl">
         {/* Certifications Title */}
         <motion.div
@@ -20,9 +20,9 @@ export default function Certifications() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="border-2 border-black dark:border-white px-8 py-4 flex items-center gap-4">
-            <Award className="w-8 h-8 text-green-600 dark:text-green-400" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white uppercase tracking-wider">
+          <div className="flex items-center gap-4 rounded-2xl border border-slate-900/10 bg-white/80 px-8 py-4 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/15 dark:bg-white/5">
+            <Award className="w-8 h-8 text-teal-600 dark:text-teal-300" />
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white uppercase tracking-[0.18em]">
               Certifications & Workshops
             </h2>
           </div>
@@ -30,27 +30,27 @@ export default function Certifications() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => {
-            const colors = [
-              "from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-blue-200 dark:border-blue-500/30",
-              "from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border-purple-200 dark:border-purple-500/30",
-              "from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 border-pink-200 dark:border-pink-500/30",
-              "from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-green-200 dark:border-green-500/30",
-              "from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border-orange-200 dark:border-orange-500/30",
+            const accents = [
+              "before:bg-blue-500",
+              "before:bg-teal-500",
+              "before:bg-amber-500",
+              "before:bg-cyan-500",
+              "before:bg-orange-500",
             ];
             return (
               <motion.div
                 key={index}
-                className={`bg-gradient-to-br ${colors[index % colors.length]} rounded-lg p-6 border-2 shadow-lg hover:shadow-xl transition-all`}
+                className={`relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] backdrop-blur transition-all before:absolute before:inset-x-0 before:top-0 before:h-1 hover:border-blue-300/70 hover:shadow-[0_24px_70px_rgba(15,23,42,0.14)] dark:border-white/10 dark:bg-white/[0.06] dark:hover:border-cyan-300/40 ${accents[index % accents.length]}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.2 } }}
               >
-                <h3 className="text-lg font-bold text-black dark:text-white mb-2">{cert.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300">{cert.issuer}</p>
+                <h3 className="text-lg font-extrabold text-slate-950 dark:text-white mb-2">{cert.title}</h3>
+                <p className="text-slate-700 dark:text-slate-300">{cert.issuer}</p>
                 {cert.date && (
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">{cert.date}</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm mt-2">{cert.date}</p>
                 )}
               </motion.div>
             );

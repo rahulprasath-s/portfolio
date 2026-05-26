@@ -9,25 +9,26 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden bg-slate-50 dark:bg-slate-950"
     >
       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
         {/* Left Side - Light Gray Background */}
         <motion.div
-          className="bg-gray-100 dark:bg-gray-900 flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-20 relative"
+          className="relative flex flex-col justify-center overflow-hidden bg-slate-50 px-8 py-24 sm:px-12 lg:px-16 dark:bg-slate-950"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_80%_80%,rgba(20,184,166,0.12),transparent_32%)]" />
           {/* Main Content */}
           <motion.div
-            className="flex-1 flex flex-col justify-center"
+            className="relative z-10 flex flex-1 flex-col justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.p
-              className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-2 uppercase tracking-wider"
+              className="mb-3 text-sm font-bold uppercase tracking-[0.28em] text-blue-700 dark:text-cyan-300 sm:text-base"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -36,7 +37,7 @@ export default function Hero() {
             </motion.p>
             
             <motion.h1
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black dark:text-white mb-4 leading-tight"
+              className="mb-5 text-5xl font-black leading-[0.92] tracking-tight text-slate-950 dark:text-white sm:text-6xl xl:text-7xl 2xl:text-8xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -47,7 +48,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12"
+              className="mb-12 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400 sm:text-xl md:text-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -65,11 +66,11 @@ export default function Hero() {
               {personalInfo.email && (
                 <motion.a
                   href={`mailto:${personalInfo.email}`}
-                  className="w-12 h-12 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Mail className="w-6 h-6 text-black dark:text-white" />
+                  <Mail className="w-6 h-6 text-slate-950 dark:text-white" />
                 </motion.a>
               )}
               {personalInfo.github && (
@@ -77,11 +78,11 @@ export default function Hero() {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Github className="w-6 h-6 text-black dark:text-white" />
+                  <Github className="w-6 h-6 text-slate-950 dark:text-white" />
                 </motion.a>
               )}
               {personalInfo.linkedin && (
@@ -89,11 +90,11 @@ export default function Hero() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center shadow-md hover:shadow-lg transition-shadow"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Linkedin className="w-6 h-6 text-black dark:text-white" />
+                  <Linkedin className="w-6 h-6 text-slate-950 dark:text-white" />
                 </motion.a>
               )}
             </motion.div>
@@ -102,13 +103,14 @@ export default function Hero() {
 
         {/* Right Side - Dark Background with Profile Picture */}
         <motion.div
-          className="bg-black dark:bg-gray-950 flex items-center justify-center px-8 sm:px-12 lg:px-16 py-20 relative overflow-hidden"
+          className="relative flex items-center justify-center overflow-hidden bg-slate-950 px-8 py-24 sm:px-12 lg:px-16"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           {/* Decorative gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-50" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.28),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(37,99,235,0.22),transparent_36%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:44px_44px]" />
           
           {/* Profile Picture */}
           <motion.div
@@ -118,8 +120,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse" />
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20 shadow-2xl">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 via-blue-500/25 to-teal-300/25 blur-3xl animate-pulse" />
+              <div className="absolute -inset-5 rounded-full border border-white/10" />
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.45)] ring-8 ring-white/5">
                 <Image
                   src="/profile-picture.jpg"
                   alt={personalInfo.name}
@@ -140,7 +143,7 @@ export default function Hero() {
           >
             <motion.a
               href="#about"
-              className="flex flex-col items-center text-white/60 hover:text-white transition-colors"
+              className="flex flex-col items-center text-white/60 transition-colors hover:text-white"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >

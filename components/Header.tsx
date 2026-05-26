@@ -34,12 +34,12 @@ export default function Header() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 dark:bg-black/90 backdrop-blur-md shadow-lg"
-          : "bg-white/95 dark:bg-black/90 backdrop-blur-md"
+          ? "bg-white/85 dark:bg-slate-950/85 backdrop-blur-xl shadow-lg shadow-slate-900/10 border-b border-slate-200/80 dark:border-white/10"
+          : "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/60 dark:border-white/10"
       }`}
     >
       {/* Top bar */}
-      <div className="bg-black dark:bg-gray-950 h-1" />
+      <div className="h-1 bg-gradient-to-r from-slate-950 via-blue-600 to-cyan-400 dark:from-cyan-300 dark:via-blue-500 dark:to-slate-950" />
       
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-end h-16">
@@ -50,7 +50,7 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-none font-semibold uppercase tracking-wider text-sm border-2 border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                  className="rounded-full border border-slate-950 bg-slate-950 px-5 py-2 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-md shadow-slate-900/15 transition-all hover:-translate-y-0.5 hover:bg-slate-800 dark:border-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -60,7 +60,7 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white transition-colors uppercase tracking-wider text-sm font-medium"
+                  className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-700 transition-colors hover:text-blue-700 dark:text-slate-300 dark:hover:text-cyan-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -70,7 +70,7 @@ export default function Header() {
             )}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors text-black dark:text-white ml-2"
+              className="ml-2 rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
@@ -87,7 +87,7 @@ export default function Header() {
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors text-black dark:text-white"
+              className="rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
             >
@@ -99,7 +99,7 @@ export default function Header() {
             </motion.button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors text-black dark:text-white"
+              className="rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -118,7 +118,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden bg-white/95 dark:bg-black/95 backdrop-blur-md border-t border-black/10 dark:border-white/10"
+              className="md:hidden overflow-hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
@@ -128,8 +128,8 @@ export default function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-2 rounded-lg transition-colors uppercase tracking-wider text-sm font-medium ${
                       item.name === "Contact"
-                        ? "bg-black dark:bg-white text-white dark:text-black border-2 border-black dark:border-white hover:bg-gray-800 dark:hover:bg-gray-100 font-semibold"
-                        : "text-black/90 dark:text-white/90 hover:text-black dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/10"
+                        ? "bg-slate-950 dark:bg-white text-white dark:text-slate-950 border border-slate-950 dark:border-white hover:bg-slate-800 dark:hover:bg-slate-100 font-semibold"
+                        : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
                     }`}
                   >
                     {item.name}
