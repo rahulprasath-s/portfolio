@@ -49,7 +49,7 @@ export interface Project {
 export const personalInfo: PersonalInfo = {
   name: "Rahulprasath Selvaraj",
   title: "M.Sc. Human and Artificial Intelligence Student",
-  bio: "M.Sc. Human and Artificial Intelligence student at the University of Technology Nuremberg with a strong background in Computer Science. Keen interest in developing end-to-end AI solutions that drive efficiency. Highly proficient in developing RAG systems, LLMs, and prompting strategies to optimize text generation with accuracy. Experienced in building self-healing autonomous workflows using N8N. A proactive learner and pragmatic problem-solver with strong communication skills, driven by a constant desire to learn, grow, and improve every day.",
+  bio: "M.Sc. Human and Artificial Intelligence student at the University of Technology Nuremberg with a Computer Science background and a strong focus on building practical AI systems that drives human efficiency. My experience now spans RAG, LLM applications, prompt engineering, structured outputs, prompt caching, and privacy-first local AI workflows. I enjoy turning complex ideas into usable products, whether that means building secure medical document assistants, autonomous research workflows, local developer tools, or 3D visualization apps. I am especially interested in AI systems that are useful, reliable, and efficient in real-world settings. I like working at the intersection of engineering, automation, and human-centered AI, and I am always looking for ways to learn faster, build cleaner, and solve problems with practical impact.",
   email: "rahulprasath17@gmail.com",
   phone: "+49 15565 693892",
   location: "Nürnberg, Germany",
