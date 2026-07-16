@@ -48,8 +48,8 @@ export default function Contact() {
   return (
     <>
       {/* Contact Section */}
-      <section id="contact" className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.12),transparent_32%)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.12),transparent_34%)]" />
+      <section id="contact" className="relative overflow-hidden bg-[#0b0b0b] px-4 py-20 text-white sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(249,115,22,0.12),transparent_34%)]" />
         <div className="container mx-auto max-w-4xl">
           {/* Contact Title */}
           <motion.div
@@ -59,8 +59,8 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="rounded-2xl border border-slate-900/10 bg-white/80 px-8 py-4 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/15 dark:bg-white/5">
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white uppercase tracking-[0.18em]">
+            <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
+              <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
                 Contact
               </h2>
             </div>
@@ -68,7 +68,7 @@ export default function Contact() {
 
           {/* Intro Text */}
           <motion.p
-            className="relative z-10 text-center text-slate-600 dark:text-slate-400 mb-8 text-sm sm:text-base max-w-2xl mx-auto"
+            className="relative z-10 text-center text-white/50 mb-8 text-sm sm:text-base max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,15 +85,15 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="h-px w-16 bg-slate-300 dark:bg-white/20" />
-            <div className="mx-4 w-2 h-2 rounded-full bg-blue-500 dark:bg-cyan-300" />
-            <div className="h-px flex-1 max-w-xs bg-slate-300 dark:bg-white/20" />
+            <div className="h-px w-16 bg-white/10" />
+            <div className="mx-4 w-2 h-2 rounded-full bg-orange-500" />
+            <div className="h-px flex-1 max-w-xs bg-white/10" />
           </motion.div>
 
           {/* Contact Form */}
           <motion.form
             onSubmit={handleSubmit}
-            className="relative z-10 mx-auto max-w-2xl space-y-6 rounded-3xl border border-slate-200/80 bg-white/85 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-white/10 dark:bg-white/[0.06] sm:p-8"
+            className="relative z-10 mx-auto max-w-2xl space-y-6 rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:p-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -102,7 +102,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-bold mb-2 text-slate-950 dark:text-white uppercase tracking-[0.14em]"
+                className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
                 Enter Your Name *
               </label>
@@ -112,14 +112,14 @@ export default function Contact() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-slate-950 outline-none transition-colors focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-cyan-300"
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition-colors focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
               />
             </div>
 
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-bold mb-2 text-slate-950 dark:text-white uppercase tracking-[0.14em]"
+                className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
                 Enter Your Email *
               </label>
@@ -129,14 +129,14 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-slate-950 outline-none transition-colors focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-cyan-300"
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition-colors focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
               />
             </div>
 
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-bold mb-2 text-slate-950 dark:text-white uppercase tracking-[0.14em]"
+                className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
                 Phone Number
               </label>
@@ -145,14 +145,14 @@ export default function Contact() {
                 id="phone"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-slate-950 outline-none transition-colors focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-cyan-300"
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition-colors focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-bold mb-2 text-slate-950 dark:text-white uppercase tracking-[0.14em]"
+                className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
                 Your Message *
               </label>
@@ -162,7 +162,7 @@ export default function Contact() {
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full resize-none rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-slate-950 outline-none transition-colors focus:border-blue-400 focus:ring-4 focus:ring-blue-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-cyan-300"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition-colors focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10"
               />
             </div>
 
@@ -171,7 +171,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={status === "loading"}
-                className="rounded-full bg-slate-950 px-10 py-3 font-bold uppercase tracking-[0.16em] text-white shadow-lg shadow-slate-900/20 transition-all disabled:opacity-50 dark:bg-white dark:text-slate-950 dark:shadow-cyan-500/10"
+                className="rounded-lg bg-orange-500 px-10 py-3 font-bold uppercase tracking-[0.16em] text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-orange-400 disabled:opacity-50"
                 whileHover={{ scale: status === "loading" ? 1 : 1.05 }}
                 whileTap={{ scale: status === "loading" ? 1 : 0.95 }}
               >
@@ -196,7 +196,7 @@ export default function Contact() {
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-slate-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#0b0b0b] text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           {/* Back to Top */}
           <motion.div
@@ -208,7 +208,7 @@ export default function Contact() {
           >
             <motion.button
               onClick={scrollToTop}
-              className="flex flex-col items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm uppercase tracking-[0.16em] text-white/80 transition-colors hover:border-cyan-300/40 hover:text-white"
+              className="flex flex-col items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm uppercase tracking-[0.16em] text-white/55 transition-colors hover:border-orange-500/40 hover:text-orange-500"
               whileHover={{ y: -5 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -228,7 +228,7 @@ export default function Contact() {
             {personalInfo.email && (
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/80 transition-colors hover:border-cyan-300/40 hover:text-white"
+                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/55 transition-colors hover:border-orange-500/40 hover:text-orange-500"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -240,7 +240,7 @@ export default function Contact() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/80 transition-colors hover:border-cyan-300/40 hover:text-white"
+                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/55 transition-colors hover:border-orange-500/40 hover:text-orange-500"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -252,7 +252,7 @@ export default function Contact() {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/80 transition-colors hover:border-cyan-300/40 hover:text-white"
+                className="rounded-full border border-white/10 bg-white/5 p-3 text-white/55 transition-colors hover:border-orange-500/40 hover:text-orange-500"
                 whileHover={{ scale: 1.2, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -263,7 +263,7 @@ export default function Contact() {
 
           {/* Copyright */}
           <motion.p
-            className="text-center text-white/60 text-sm"
+            className="text-center text-white/38 text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

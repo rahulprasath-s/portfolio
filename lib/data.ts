@@ -15,6 +15,8 @@ export interface Experience {
   role: string;
   startDate: string;
   endDate: string | "Present";
+  employmentType?: string;
+  location?: string;
   description: string[];
   technologies?: string[];
 }
@@ -58,7 +60,19 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const experiences: Experience[] = [
-  // Add your experience here
+  {
+    company: "Soccerkinetics",
+    role: "Working Student - AI & Automation Engineer",
+    startDate: "Jul 2026",
+    endDate: "Present",
+    employmentType: "Part-time",
+    location: "Ingolstadt, Bavaria, Germany",
+    description: [
+      "Working on AI and automation workflows that improve operational efficiency and support practical product use cases.",
+      "Building reliable automations that connect data, tools, and AI systems into cleaner day-to-day workflows.",
+    ],
+    technologies: ["AI Automation", "Workflow Automation", "Python", "LLMs", "Process Optimization"],
+  },
 ];
 
 export const education: Education[] = [

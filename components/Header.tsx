@@ -20,11 +20,10 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "About me", href: "#about" },
-    { name: "Education", href: "#education" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Portfolio", href: "#projects" },
   ];
 
   return (
@@ -32,45 +31,49 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/85 dark:bg-slate-950/85 backdrop-blur-xl shadow-lg shadow-slate-900/10 border-b border-slate-200/80 dark:border-white/10"
-          : "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/60 dark:border-white/10"
-      }`}
+      className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 transition-all duration-300"
     >
-      {/* Top bar */}
-      <div className="h-1 bg-gradient-to-r from-slate-950 via-blue-600 to-cyan-400 dark:from-cyan-300 dark:via-blue-500 dark:to-slate-950" />
-      
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-end h-16">
+      <nav
+        className={`mx-auto max-w-6xl rounded-[1.4rem] border px-5 transition-all duration-300 sm:px-8 ${
+          isScrolled
+            ? "border-orange-500/30 bg-[#121212]/92 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            : "border-white/10 bg-[#111111]/88 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+        }`}
+      >
+        <div className="flex h-16 items-center justify-between gap-5">
+          <a href="#home" className="text-xl font-black uppercase tracking-tight text-orange-500">
+            RS
+          </a>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) =>
-              item.name === "Contact" ? (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className="rounded-full border border-slate-950 bg-slate-950 px-5 py-2 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-md shadow-slate-900/15 transition-all hover:-translate-y-0.5 hover:bg-slate-800 dark:border-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.name}
-                </motion.a>
-              ) : (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-700 transition-colors hover:text-blue-700 dark:text-slate-300 dark:hover:text-cyan-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.name}
-                </motion.a>
-              )
-            )}
+          <div className="hidden items-center space-x-8 md:flex">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className={`text-sm font-bold transition-colors hover:text-orange-500 ${
+                  index === 0 ? "text-orange-500" : "text-white/48"
+                }`}
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <motion.a
+              href="#contact"
+              className="rounded-lg bg-orange-500 px-6 py-2.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(249,115,22,0.28)] transition-colors hover:bg-orange-400"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.96 }}
+            >
+              Hire Me
+            </motion.a>
             <motion.button
               onClick={toggleTheme}
-              className="ml-2 rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/60 transition-colors hover:border-orange-500/40 hover:text-orange-400"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
@@ -87,7 +90,7 @@ export default function Header() {
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
-              className="rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/70"
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
             >
@@ -99,7 +102,7 @@ export default function Header() {
             </motion.button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="rounded-full border border-slate-200 bg-white/80 p-2 text-slate-900 shadow-sm transition-colors hover:border-blue-300 hover:bg-blue-50 dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:border-cyan-300/50 dark:hover:bg-white/15"
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/70"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -118,7 +121,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden border-t border-slate-200/80 bg-white/95 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95"
+              className="overflow-hidden border-t border-white/10 bg-[#111111]/95 backdrop-blur-xl md:hidden"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
@@ -126,15 +129,18 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-4 py-2 rounded-lg transition-colors uppercase tracking-wider text-sm font-medium ${
-                      item.name === "Contact"
-                        ? "bg-slate-950 dark:bg-white text-white dark:text-slate-950 border border-slate-950 dark:border-white hover:bg-slate-800 dark:hover:bg-slate-100 font-semibold"
-                        : "text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10"
-                    }`}
+                    className="block rounded-lg px-4 py-2 text-sm font-bold text-white/60 transition-colors hover:bg-white/10 hover:text-orange-400"
                   >
                     {item.name}
                   </a>
                 ))}
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
+                >
+                  Hire Me
+                </a>
               </div>
             </motion.div>
           )}

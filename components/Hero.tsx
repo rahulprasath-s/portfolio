@@ -9,26 +9,25 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden bg-slate-50 dark:bg-slate-950"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#0b0b0b] px-4 py-28 text-white sm:px-6 lg:px-8"
     >
-      <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
-        {/* Left Side - Light Gray Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_45%,rgba(249,115,22,0.14),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08)_0,transparent_22%,transparent_70%,rgba(255,255,255,0.06)_100%)]" />
+      <div className="absolute -left-40 top-0 h-[36rem] w-[36rem] rotate-45 bg-white/[0.03]" />
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 overflow-hidden rounded-[2rem] border border-white/14 bg-[#121212] shadow-[0_30px_110px_rgba(0,0,0,0.55)] lg:min-h-[680px] lg:grid-cols-[1fr_0.95fr]">
         <motion.div
-          className="relative flex flex-col justify-center overflow-hidden bg-slate-50 px-8 py-24 sm:px-12 lg:px-16 dark:bg-slate-950"
+          className="relative z-20 flex flex-col justify-center px-8 py-14 sm:px-12 lg:px-14 lg:py-16"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(59,130,246,0.16),transparent_28%),radial-gradient(circle_at_80%_80%,rgba(20,184,166,0.12),transparent_32%)]" />
-          {/* Main Content */}
           <motion.div
-            className="relative z-10 flex flex-1 flex-col justify-center"
+            className="relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <motion.p
-              className="mb-3 text-sm font-bold uppercase tracking-[0.28em] text-blue-700 dark:text-cyan-300 sm:text-base"
+              className="mb-3 text-base font-bold text-white/48"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -37,7 +36,7 @@ export default function Hero() {
             </motion.p>
             
             <motion.h1
-              className="mb-5 text-5xl font-black leading-[0.92] tracking-tight text-slate-950 dark:text-white sm:text-6xl xl:text-7xl 2xl:text-8xl"
+              className="mb-5 text-2xl font-black leading-tight text-white/70 sm:text-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -48,17 +47,17 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="mb-12 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400 sm:text-xl md:text-2xl"
+              className="mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-orange-500 sm:text-5xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {personalInfo.title}
+              AI & Automation Engineer
             </motion.p>
 
             {/* Social Media Icons */}
             <motion.div
-              className="flex gap-4"
+              className="mb-10 flex gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -66,11 +65,11 @@ export default function Hero() {
               {personalInfo.email && (
                 <motion.a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Mail className="w-6 h-6 text-slate-950 dark:text-white" />
+                  <Mail className="h-4 w-4" />
                 </motion.a>
               )}
               {personalInfo.github && (
@@ -78,11 +77,11 @@ export default function Hero() {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Github className="w-6 h-6 text-slate-950 dark:text-white" />
+                  <Github className="h-4 w-4" />
                 </motion.a>
               )}
               {personalInfo.linkedin && (
@@ -90,44 +89,50 @@ export default function Hero() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 shadow-lg shadow-slate-900/10 transition-all hover:border-blue-300 hover:shadow-xl dark:border-white/10 dark:bg-white/10 dark:hover:border-cyan-300/50"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Linkedin className="w-6 h-6 text-slate-950 dark:text-white" />
+                  <Linkedin className="h-4 w-4" />
                 </motion.a>
               )}
             </motion.div>
+
+            <motion.p
+              className="max-w-md text-2xl font-black leading-tight text-white sm:text-3xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
+              Building AI that drives human efficiency
+            </motion.p>
           </motion.div>
         </motion.div>
 
-        {/* Right Side - Dark Background with Profile Picture */}
         <motion.div
-          className="relative flex items-center justify-center overflow-hidden bg-slate-950 px-8 py-24 sm:px-12 lg:px-16"
+          className="relative flex min-h-[360px] items-center justify-center overflow-hidden px-8 pb-16 pt-4 sm:min-h-[440px] sm:px-12 lg:min-h-[500px] lg:px-16 lg:py-16"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Decorative gradient overlay */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.28),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(37,99,235,0.22),transparent_36%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:44px_44px]" />
+          <div className="absolute h-[28rem] w-[28rem] rounded-full bg-white/[0.045]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_48%,rgba(249,115,22,0.10),transparent_32%)]" />
           
-          {/* Profile Picture */}
           <motion.div
             className="relative z-10"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/30 via-blue-500/25 to-teal-300/25 blur-3xl animate-pulse" />
-              <div className="absolute -inset-5 rounded-full border border-white/10" />
-              <div className="relative h-full w-full overflow-hidden rounded-full border border-white/20 shadow-[0_30px_90px_rgba(0,0,0,0.45)] ring-8 ring-white/5">
+            <div className="relative h-72 w-72 sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem]">
+              <div className="absolute inset-6 rounded-full bg-[#202020]" />
+              <div className="absolute inset-0 rounded-full border border-white/8" />
+              <div className="relative h-full w-full overflow-hidden rounded-full grayscale">
                 <Image
                   src="/profile-picture.jpg"
                   alt={personalInfo.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   priority
                 />
               </div>
@@ -143,7 +148,7 @@ export default function Hero() {
           >
             <motion.a
               href="#about"
-              className="flex flex-col items-center text-white/60 transition-colors hover:text-white"
+              className="flex flex-col items-center text-white/35 transition-colors hover:text-orange-500"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -153,9 +158,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Diagonal divider on large screens */}
-      <div className="hidden lg:block absolute top-0 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent opacity-50" />
     </section>
   );
 }
