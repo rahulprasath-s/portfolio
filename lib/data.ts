@@ -2,6 +2,10 @@ export interface PersonalInfo {
   name: string;
   title: string;
   bio: string;
+  bioHighlights: {
+    label: string;
+    text: string;
+  }[];
   email: string;
   phone?: string;
   location?: string;
@@ -51,7 +55,25 @@ export interface Project {
 export const personalInfo: PersonalInfo = {
   name: "Rahulprasath Selvaraj",
   title: "M.Sc. Human and Artificial Intelligence Student",
-  bio: "M.Sc. Human and Artificial Intelligence student at the University of Technology Nuremberg with a Computer Science background and a strong focus on building practical AI systems that drives human efficiency. My experience now spans RAG, LLM applications, prompt engineering, structured outputs, prompt caching, and privacy-first local AI workflows. I enjoy turning complex ideas into usable products, whether that means building secure medical document assistants, autonomous research workflows, local developer tools, or 3D visualization apps. I am especially interested in AI systems that are useful, reliable, and efficient in real-world settings. I like working at the intersection of engineering, automation, and human-centered AI, and I am always looking for ways to learn faster, build cleaner, and solve problems with practical impact.",
+  bio: "M.Sc. Human and Artificial Intelligence student at the University of Technology Nuremberg and Working Student - AI & Automation Engineer at Soccerkinetics, with a Computer Science background and a strong focus on building practical AI systems that drive human efficiency. At Soccerkinetics, I build AI and automation workflows that connect data, tools, and AI systems to improve operational efficiency.",
+  bioHighlights: [
+    {
+      label: "Expertise",
+      text: "RAG, LLM applications, prompt engineering, structured outputs, prompt caching, and privacy-first local AI workflows.",
+    },
+    {
+      label: "What I build",
+      text: "I turn complex ideas into usable products, from secure medical document assistants and autonomous research workflows to local developer tools and 3D visualization apps.",
+    },
+    {
+      label: "AI focus",
+      text: "Useful, reliable, and efficient AI systems designed for real-world settings.",
+    },
+    {
+      label: "How I work",
+      text: "I work at the intersection of engineering, automation, and human-centered AI, always looking for ways to learn faster, build cleaner, and solve problems with practical impact.",
+    },
+  ],
   email: "rahulprasath17@gmail.com",
   phone: "+49 15565 693892",
   location: "Nürnberg, Germany",

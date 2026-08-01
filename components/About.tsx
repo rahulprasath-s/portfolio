@@ -10,7 +10,7 @@ export default function About() {
       className="relative overflow-hidden bg-[#0b0b0b] px-4 py-20 text-white sm:px-6 lg:px-8"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(249,115,22,0.10),transparent_30%)]" />
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         {/* About Me Title */}
         <motion.div
           className="relative z-10 flex justify-center mb-10"
@@ -27,15 +27,41 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          className="relative z-10 mb-8 rounded-3xl border border-white/10 bg-[#151515] p-6 text-center shadow-[0_18px_60px_rgba(0,0,0,0.28)] sm:p-8"
+          className="relative z-10 grid overflow-hidden rounded-3xl border border-white/10 bg-[#151515] shadow-[0_18px_60px_rgba(0,0,0,0.28)] lg:grid-cols-[0.9fr_1.1fr]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="mx-auto max-w-3xl text-base leading-relaxed text-white/60 sm:text-lg">
-            {personalInfo.bio}
-          </p>
+          <div className="flex flex-col justify-center border-b border-white/10 p-7 sm:p-9 lg:border-b-0 lg:border-r">
+            <span className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+              Professional summary
+            </span>
+            <p className="text-base leading-relaxed text-white/68 sm:text-lg">
+              {personalInfo.bio}
+            </p>
+          </div>
+
+          <ul className="divide-y divide-white/10">
+            {personalInfo.bioHighlights.map((highlight, index) => (
+              <li
+                key={highlight.label}
+                className="grid gap-2 p-6 sm:grid-cols-[8rem_1fr] sm:gap-5 sm:px-8"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/[0.12] text-xs font-black text-orange-500">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-extrabold text-white">
+                    {highlight.label}
+                  </span>
+                </div>
+                <p className="pl-10 text-sm leading-relaxed text-white/55 sm:pl-0">
+                  {highlight.text}
+                </p>
+              </li>
+            ))}
+          </ul>
         </motion.div>
 
         {personalInfo.location && (
