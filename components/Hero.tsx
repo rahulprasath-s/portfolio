@@ -127,14 +127,15 @@ export default function Hero() {
             <div className="relative h-72 w-72 sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem]">
               <div className="absolute inset-6 rounded-full bg-[#202020]" />
               <div className="absolute inset-0 rounded-full border border-white/8" />
-              <div className="relative h-full w-full overflow-hidden rounded-full grayscale">
+              <div className="relative h-full w-full overflow-hidden rounded-full">
                 <Image
-                  src="/profile-picture.jpg"
+                  src="/profile_2.jpeg"
                   alt={personalInfo.name}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-[center_42%] contrast-[1.03] saturate-[0.92]"
                   priority
                 />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_54%,rgba(11,11,11,0.28)_100%)]" />
               </div>
             </div>
           </motion.div>
