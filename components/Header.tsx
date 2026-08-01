@@ -69,7 +69,7 @@ export default function Header() {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
-              Hire Me
+              Contact Me
             </motion.a>
             <motion.button
               onClick={toggleTheme}
@@ -139,7 +139,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
                 >
-                  Hire Me
+                  Contact Me
                 </a>
               </div>
             </motion.div>

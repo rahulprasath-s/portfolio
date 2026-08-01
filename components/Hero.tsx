@@ -11,7 +11,7 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen items-center overflow-hidden bg-[#0b0b0b] px-4 py-28 text-white sm:px-6 lg:px-8"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_45%,rgba(249,115,22,0.14),transparent_30%),linear-gradient(135deg,rgba(255,255,255,0.08)_0,transparent_22%,transparent_70%,rgba(255,255,255,0.06)_100%)]" />
+      <div className="hero-wash absolute inset-0" />
       <div className="absolute -left-40 top-0 h-[36rem] w-[36rem] rotate-45 bg-white/[0.03]" />
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 overflow-hidden rounded-[2rem] border border-white/14 bg-[#121212] shadow-[0_30px_110px_rgba(0,0,0,0.55)] lg:min-h-[680px] lg:grid-cols-[1fr_0.95fr]">
         <motion.div
@@ -124,7 +124,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative h-72 w-72 sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem]">
+            <div className="profile-frame relative h-72 w-72 rounded-full sm:h-[24rem] sm:w-[24rem] lg:h-[30rem] lg:w-[30rem]">
               <div className="absolute inset-6 rounded-full bg-[#202020]" />
               <div className="absolute inset-0 rounded-full border border-white/8" />
               <div className="relative h-full w-full overflow-hidden rounded-full">
@@ -135,7 +135,7 @@ export default function Hero() {
                   className="object-cover object-[center_42%] contrast-[1.03] saturate-[0.92]"
                   priority
                 />
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,transparent_54%,rgba(11,11,11,0.28)_100%)]" />
+                <div className="profile-vignette pointer-events-none absolute inset-0" />
               </div>
             </div>
           </motion.div>

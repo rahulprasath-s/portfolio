@@ -105,7 +105,7 @@ export default function Projects() {
                 onClick={() => setSelectedProject(project.id)}
                 layout
               >
-                <div className={`relative w-full h-52 bg-gradient-to-br ${getFallbackAccent(project.category)} overflow-hidden`}>
+                <div className={`theme-inverse relative w-full h-52 bg-gradient-to-br ${getFallbackAccent(project.category)} overflow-hidden`}>
                   {project.image ? (
                     <Image
                       src={project.image}

@@ -17,10 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{const saved=localStorage.getItem("theme");const theme=saved||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.classList.toggle("dark",theme==="dark");document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme}catch{}`,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
 }
-

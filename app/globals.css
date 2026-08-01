@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  /* Light mode: Vibrant and Colorful */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 10%;
+  color-scheme: light;
+  --background: 40 24% 95%;
+  --foreground: 30 8% 12%;
   --primary: 217 91% 60%;
   --secondary: 0 0% 96%;
   --accent: 280 100% 70%;
@@ -19,8 +19,8 @@
 }
 
 .dark {
-  /* Dark mode: Rich colors on dark background */
-  --background: 0 0% 0%;
+  color-scheme: dark;
+  --background: 0 0% 4%;
   --foreground: 0 0% 95%;
   --primary: 217 91% 60%;
   --secondary: 0 0% 12%;
@@ -46,11 +46,89 @@ html {
 
 body {
   color: hsl(var(--foreground));
-  background: #0b0b0b;
+  background: hsl(var(--background));
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* The portfolio was designed dark-first. These light-mode mappings preserve
+   that visual hierarchy while giving every existing surface usable contrast. */
+html:not(.dark) [class*="bg-[#0b0b0b]"] {
+  background-color: #f4f1ea !important;
+}
+
+html:not(.dark) [class*="bg-[#111111]"],
+html:not(.dark) [class*="bg-[#121212]"],
+html:not(.dark) [class*="bg-[#151515]"] {
+  background-color: rgba(255, 253, 248, 0.96) !important;
+}
+
+html:not(.dark) [class*="bg-[#202020]"] {
+  background-color: #e9e3d9 !important;
+}
+
+html:not(.dark) [class~="text-white"] {
+  color: #211f1c !important;
+}
+
+html:not(.dark) [class*="text-white/"] {
+  color: #68635b !important;
+}
+
+html:not(.dark) [class*="border-white/"] {
+  border-color: rgba(48, 42, 34, 0.14) !important;
+}
+
+html:not(.dark) [class*="ring-white/"] {
+  --tw-ring-color: rgba(48, 42, 34, 0.12) !important;
+}
+
+html:not(.dark) [class*="bg-white/"] {
+  background-color: rgba(48, 42, 34, 0.045) !important;
+}
+
+html:not(.dark) [class*="divide-white/"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(48, 42, 34, 0.12) !important;
+}
+
+html:not(.dark) [class*="border-[#0b0b0b]"] {
+  border-color: #f4f1ea !important;
+}
+
+html:not(.dark) [class*="bg-orange-"][class~="text-white"],
+html:not(.dark) .theme-inverse [class~="text-white"],
+html:not(.dark) .theme-inverse [class*="text-white/"] {
+  color: #fff !important;
+}
+
+.hero-wash {
+  background:
+    radial-gradient(circle at 18% 45%, rgba(249, 115, 22, 0.14), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0, transparent 22%, transparent 70%, rgba(255, 255, 255, 0.06) 100%);
+}
+
+html:not(.dark) .hero-wash {
+  background:
+    radial-gradient(circle at 18% 45%, rgba(249, 115, 22, 0.13), transparent 32%),
+    linear-gradient(135deg, rgba(120, 96, 68, 0.06) 0, transparent 24%, transparent 72%, rgba(249, 115, 22, 0.05) 100%);
+}
+
+.profile-frame {
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+}
+
+html:not(.dark) .profile-frame {
+  box-shadow: 0 24px 65px rgba(75, 57, 35, 0.18);
+}
+
+.profile-vignette {
+  background: radial-gradient(circle at 50% 38%, transparent 54%, rgba(11, 11, 11, 0.28) 100%);
+}
+
+html:not(.dark) .profile-vignette {
+  background: radial-gradient(circle at 50% 38%, transparent 62%, rgba(33, 28, 22, 0.1) 100%);
 }
 
 ::selection {
