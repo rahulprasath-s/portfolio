@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Rahulprasath Selvaraj | Portfolio",
-  description: "M.Sc. Human and Artificial Intelligence student specializing in RAG systems, LLMs, and AI solutions. Portfolio showcasing projects, publications, and achievements.",
+  description: "AI & Automation Engineer building LLM applications, automated data pipelines, local RAG systems, computer vision tools, and full-stack AI products.",
 };
 
 export default function RootLayout({

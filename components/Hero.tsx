@@ -52,7 +52,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              AI & Automation Engineer
+              {personalInfo.title}
             </motion.p>
 
             {/* Social Media Icons */}
@@ -104,7 +104,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              Building AI that drives human efficiency
+              Building practical AI systems, automated pipelines, and full-stack tools
             </motion.p>
           </motion.div>
         </motion.div>
