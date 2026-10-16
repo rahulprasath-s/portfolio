@@ -229,6 +229,7 @@ export const projects: Project[] = [
     longDescription: "Developed at Soccerkinetics with PostgreSQL-backed job storage and Redis/RQ background processing. The application uses Whisper for transcription and local Qwen inference through Ollama, with configurable cloud-model fallback, retry handling, structured summaries, and validation for word budgets and timestamps.",
     technologies: ["Next.js", "FastAPI", "PostgreSQL", "Redis/RQ", "Ollama", "Whisper", "Docker"],
     category: "Professional Work",
+    image: "/project-podcast-summarizer.jpg",
   },
   {
     id: "financial-news-monitoring",
@@ -237,6 +238,7 @@ export const projects: Project[] = [
     longDescription: "Developed at Soccerkinetics to collect news and press releases, extract stock identifiers, and resolve company names, tickers, WKNs, and ISINs. The system includes campaign-page discovery, promotion-warning signals, regulatory-source monitoring, and searchable dashboards for reviewing articles and linked instruments.",
     technologies: ["Python", "FastAPI", "SQLAlchemy", "SQLite", "Trafilatura", "RSS", "OpenFIGI"],
     category: "Professional Work",
+    image: "/project-financial-news-monitoring.jpg",
   },
   {
     id: "local-workspace-context-optimizer",
@@ -265,6 +267,7 @@ export const projects: Project[] = [
     longDescription: "Refactored a notebook experiment into a reusable training package with a CLI, lazy sliding-window datasets, mixed precision, gradient accumulation, checkpointing, metrics, and plots. The completed T4 run achieved a 6.5% lower normalized test MSE for the Mamba-style model than the LSTM baseline.",
     technologies: ["Python", "PyTorch", "Time-Series Forecasting", "Mamba", "LSTM", "CUDA"],
     category: "AI & Machine Learning",
+    image: "/project-mamba-vs-lstm.jpg",
     githubUrl: "https://github.com/rahulprasath-s/mamba-vs-lstm-forecasting",
   },
   {
@@ -274,6 +277,7 @@ export const projects: Project[] = [
     longDescription: "Built a command-based and interactive CLI backed by the CoinGecko API. It supports symbol lookups, top-market-cap tables, gainers and losers, currency switching, formatted detail cards, environment-based credentials, and friendly handling for invalid input and API limits.",
     technologies: ["TypeScript", "Node.js", "CoinGecko API", "Commander", "Axios", "cli-table3"],
     category: "Developer Tools",
+    image: "/project-crypto-dashboard-cli.jpg",
     githubUrl: "https://github.com/rahulprasath-s/Crypto-Data-in-CLI",
   },
   {
@@ -283,6 +287,7 @@ export const projects: Project[] = [
     longDescription: "Created a frontend-only quiz application with a maintainable typed question model. Users select one answer at a time, receive immediate visual feedback, track their score and progress, and can restart from the final results screen.",
     technologies: ["Vue 3", "TypeScript", "Tailwind CSS", "Vite"],
     category: "Web Applications",
+    image: "/project-quiz-ai.jpg",
     githubUrl: "https://github.com/rahulprasath-s/Quiz-AI",
   },
   {
@@ -292,6 +297,7 @@ export const projects: Project[] = [
     longDescription: "Built a lightweight scheduled serverless endpoint with Vercel Cron and environment-based authentication. The project includes manual deployment instructions, configurable timing and message content, and a live deployment for testing the workflow.",
     technologies: ["HTML", "JavaScript", "Vercel", "Cron", "Anthropic API"],
     category: "Developer Tools",
+    image: "/project-claude-code-warmup.jpg",
     githubUrl: "https://github.com/rahulprasath-s/claude-code-warmup",
     liveUrl: "https://claude-code-warmup-lemon.vercel.app",
   },
