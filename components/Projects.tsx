@@ -114,17 +114,7 @@ export default function Projects() {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="absolute inset-0 flex flex-col justify-between p-5">
-                      <span className="self-start rounded-full border border-white/30 bg-black/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
-                        {project.category || "Project"}
-                      </span>
-                      <div>
-                        <p className="text-sm uppercase tracking-[0.35em] text-white/70">Featured Build</p>
-                        <h3 className="mt-2 max-w-[14rem] text-2xl font-bold leading-tight text-white">
-                          {project.title}
-                        </h3>
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.2),transparent_16%),radial-gradient(circle_at_68%_58%,rgba(249,115,22,0.4),transparent_18%)]" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
                   <span className="absolute left-4 top-4 max-w-[calc(100%-2rem)] truncate rounded-full border border-white/20 bg-black/55 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
