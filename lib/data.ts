@@ -86,7 +86,7 @@ export const experiences: Experience[] = [
     company: "Soccerkinetics",
     role: "AI & Automation Engineer",
     startDate: "Jul 2026",
-    endDate: "Present",
+    endDate: "Oct 2026",
     employmentType: "Working Student",
     location: "Nuremberg, Germany",
     description: [
