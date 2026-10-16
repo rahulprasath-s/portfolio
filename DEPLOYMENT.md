@@ -57,7 +57,7 @@ Vercel is made by the creators of Next.js and offers free hosting with automatic
    - After deployment starts, go to "Settings" → "Environment Variables"
    - Add these variables:
      - `RESEND_API_KEY` = your Resend API key
-     - `CONTACT_EMAIL` = rahulprasath17@gmail.com
+     - `CONTACT_EMAIL` = rahulprasathselvaraj@gmail.com
    - Click "Save"
    - Go to "Deployments" tab and redeploy (click the three dots → "Redeploy")
 
@@ -171,4 +171,3 @@ npm run dev
 ---
 
 **Need Help?** Check the [Vercel Documentation](https://vercel.com/docs) or [Next.js Deployment Guide](https://nextjs.org/docs/deployment)
-

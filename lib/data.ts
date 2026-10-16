@@ -74,7 +74,7 @@ export const personalInfo: PersonalInfo = {
       text: "Practical delivery, privacy-aware architecture, observable workflows, dependable integrations, and deployment-ready software.",
     },
   ],
-  email: "rahulprasath17@gmail.com",
+  email: "rahulprasathselvaraj@gmail.com",
   phone: "+49 15565 693892",
   location: "Nürnberg, Germany",
   github: "https://github.com/rahulprasath-s",
