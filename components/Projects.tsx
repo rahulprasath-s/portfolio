@@ -55,7 +55,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-orange-500">
-            Selected Work
+            Project Portfolio
           </p>
           <div className="inline-flex rounded-2xl border border-white/10 bg-[#151515] px-7 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[0.18em] text-white">
@@ -63,7 +63,7 @@ export default function Projects() {
             </h2>
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-white/52">
-            A focused set of AI, automation, and visualization builds with real-world constraints, practical tooling, and clean execution.
+            Public GitHub builds and professional work across AI engineering, automation, developer tooling, computer vision, data, and interactive web experiences.
           </p>
         </motion.div>
 
