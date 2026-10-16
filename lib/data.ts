@@ -219,7 +219,7 @@ export const projects: Project[] = [
     longDescription: "Built a scheduled Python pipeline that gathers papers and news from arXiv, Hacker News, Hugging Face, and Techmeme. NVIDIA NIM ranks and summarizes selected items before publishing them to Notion. Timezone-aware filtering, historical deduplication, Date + Rank guards, and reconciliation runs prevent duplicate content while filling missing entries.",
     technologies: ["Python", "GitHub Actions", "NVIDIA NIM", "Notion API", "Cloudflare Workers", "RSS"],
     category: "Workflow Automation",
-    image: "/project-ai-daily-brief.jpg",
+    image: "/project-ai-daily-brief-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/AI-Daily-Brief",
   },
   {
@@ -247,7 +247,7 @@ export const projects: Project[] = [
     longDescription: "Created a Python workspace scanner, polling watcher, CLI, and local web UI that convert repository files and changes into reusable context snapshots. The Anthropic integration adds ephemeral prompt caching, strict structured output, secret-file exclusions, external context sources, and a usage ledger for measuring cache reuse and token savings.",
     technologies: ["Python", "Anthropic API", "Prompt Caching", "Structured Outputs", "CLI", "Filesystem Watcher"],
     category: "Developer Tools",
-    image: "/local-workspace-context-optimizer.png",
+    image: "/project-local-workspace-context-optimizer.jpg",
     githubUrl: "https://github.com/rahulprasath-s/Local-Workspace-Context-Optimizer",
   },
   {
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     longDescription: "Built an interactive building visualization prototype with Google Maps search, manual footprint tracing, OpenStreetMap and Nominatim geometry, satellite contour extraction, configurable roof profiles, estimated height and area, adaptive camera controls, and fallback geometry for incomplete map data.",
     technologies: ["React", "Three.js", "React Three Fiber", "Node.js", "Express", "MongoDB", "Google Maps"],
     category: "3D Visualization",
-    image: "/archi-sight.jpg",
+    image: "/archi-sight-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/3D-Visualization-of-Buildings",
   },
   {
@@ -308,7 +308,7 @@ export const projects: Project[] = [
     longDescription: "Built a Docker Compose application combining a Streamlit interface, FastAPI ingestion backend, Qdrant vector database, Sentence Transformer embeddings, and local Ollama inference. Overlapping chunks, cosine-similarity retrieval, and source metadata support grounded answers while keeping sensitive documents on-device.",
     technologies: ["Python", "FastAPI", "Streamlit", "Qdrant", "Ollama", "Docker", "RAG"],
     category: "AI & Machine Learning",
-    image: "/project-careflow-intelligence.jpg",
+    image: "/project-careflow-intelligence-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/Careflow_Intelligence",
   },
   {
@@ -318,7 +318,7 @@ export const projects: Project[] = [
     longDescription: "Developed live-camera and snapshot inspection interfaces with YOLO inference, region-of-interest cropping, confidence filtering, and annotated detection boxes. The project supports Core ML model loading for Apple Silicon and a PyTorch-weight fallback, plus a Streamlit camera interface for snapshot analysis.",
     technologies: ["Python", "Ultralytics YOLO", "OpenCV", "Core ML", "Streamlit", "Edge AI"],
     category: "Computer Vision",
-    image: "/project-fabriciris.jpg",
+    image: "/project-fabriciris-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/FabricIRIS-Textile-Defect",
   },
   {
@@ -328,7 +328,7 @@ export const projects: Project[] = [
     longDescription: "Built a webcam-based gesture-to-speech application with MediaPipe hand landmarks, OpenCV video processing, a customizable gesture dictionary, multi-hand gesture support, and local text-to-speech output through pyttsx3.",
     technologies: ["Python", "OpenCV", "MediaPipe", "pyttsx3", "Computer Vision", "Text-to-Speech"],
     category: "Computer Vision",
-    image: "/project-sign2say.jpg",
+    image: "/project-sign2say-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/Sign2Say",
   },
 ];
