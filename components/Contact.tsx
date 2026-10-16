@@ -13,10 +13,12 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setStatusMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -27,17 +29,23 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
         setStatus("success");
+        setStatusMessage("Thanks! Your message was sent successfully.");
         setFormData({ name: "", email: "", phone: "", message: "" });
-        setTimeout(() => setStatus("idle"), 3000);
       } else {
         setStatus("error");
-        setTimeout(() => setStatus("idle"), 3000);
+        setStatusMessage(
+          result.error || "Your message could not be sent. Please email me directly."
+        );
       }
     } catch (error) {
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 3000);
+      setStatusMessage(
+        "The contact service is unavailable. Please email me directly."
+      );
     }
   };
 
@@ -191,6 +199,25 @@ export default function Contact() {
                 </span>
               </motion.button>
             </div>
+            {statusMessage && (
+              <p
+                role="status"
+                aria-live="polite"
+                className={`text-center text-sm ${
+                  status === "success" ? "text-green-400" : "text-red-400"
+                }`}
+              >
+                {statusMessage}{" "}
+                {status === "error" && (
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="font-semibold text-orange-400 underline underline-offset-4"
+                  >
+                    Email me
+                  </a>
+                )}
+              </p>
+            )}
           </motion.form>
         </div>
       </section>
