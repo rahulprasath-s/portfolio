@@ -19,7 +19,8 @@ export async function POST(request: NextRequest) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: "Portfolio Contact <onboarding@resend.dev>", // Using Resend's default domain for testing. For production, verify your domain in Resend and update this.
-        to: process.env.CONTACT_EMAIL || "your.email@example.com",
+        to:
+          process.env.CONTACT_EMAIL || "rahulprasathselvaraj@gmail.com",
         subject: `New contact form submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
@@ -43,4 +44,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
