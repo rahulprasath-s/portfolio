@@ -104,7 +104,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              Building practical AI systems, automated pipelines, and full-stack tools
+              Building AI that drives human efficiency
             </motion.p>
           </motion.div>
         </motion.div>
