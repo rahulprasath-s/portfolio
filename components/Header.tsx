@@ -41,9 +41,23 @@ export default function Header() {
         }`}
       >
         <div className="flex h-16 items-center justify-between gap-5">
-          <a href="#home" className="text-xl font-black uppercase tracking-tight text-orange-500">
-            RS
-          </a>
+          <motion.a
+            href="#home"
+            aria-label="Go to home"
+            className="group relative flex h-9 w-9 items-center justify-center"
+            whileHover={{ rotate: 8, scale: 1.08 }}
+            whileTap={{ scale: 0.94 }}
+          >
+            <span
+              aria-hidden="true"
+              className="absolute h-6 w-6 rotate-45 rounded-[0.45rem] bg-orange-500 shadow-[0_8px_22px_rgba(249,115,22,0.34)] transition-transform duration-300 group-hover:rotate-[135deg]"
+            />
+            <span
+              aria-hidden="true"
+              className="absolute h-3 w-3 rotate-45 rounded-[0.2rem] border-2 border-white/80"
+            />
+            <span aria-hidden="true" className="relative h-1.5 w-1.5 rounded-full bg-neutral-950" />
+          </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center space-x-8 md:flex">
