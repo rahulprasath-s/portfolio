@@ -61,8 +61,42 @@ Soccerkinetics · July 2026–October 2026 · Nuremberg, Germany
 
 ## Highlights
 
-- **3rd Prize, RTSH 2025 Hackathon** — built and pitched an AI model within 48 hours.
+- **3rd Prize, RTSH 2025 Hackathon** — built and pitched an AI prototype within 48 hours.
 - Published **[AI in Healthcare: Simplifying Medical Reports for Enhanced Patient Comprehension](https://ieeexplore.ieee.org/abstract/document/11108371)** at ETCC 2025.
+
+## Run Locally
+
+```bash
+git clone https://github.com/rahulprasath-s/portfolio.git
+cd portfolio
+npm install
+```
+
+Create `.env.local` if you want to test the contact form:
+
+```env
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=rahulprasathselvaraj@gmail.com
+```
+
+Start the development server and open [http://localhost:3000](http://localhost:3000):
+
+```bash
+npm run dev
+```
+
+Useful checks:
+
+```bash
+npm run lint
+npm run build
+```
+
+Resend's default testing sender can only deliver to the email associated with its account. For production delivery, verify a sending domain in Resend and update the `from` address in `app/api/contact/route.ts`.
+
+## Deployment
+
+The application is ready for deployment on Vercel. Add `RESEND_API_KEY` and `CONTACT_EMAIL` to the project's environment variables, then redeploy so the contact route can access them.
 
 ## Contact
 
