@@ -30,10 +30,12 @@ Soccerkinetics · July 2026–October 2026 · Nuremberg, Germany
 
 ## Core Skills
 
-- **AI engineering:** LLM applications, RAG, prompt engineering, structured outputs, prompt caching, Ollama, Qdrant
-- **Programming and backend:** Python, JavaScript, FastAPI, Node.js, SQL, MongoDB
-- **Automation and tools:** n8n, agentic workflows, Docker, Git, REST APIs
-- **Applied AI:** PyTorch, LangChain, OpenCV, NLP, OCR
+- **Languages:** Python, JavaScript, TypeScript, SQL, Java, C
+- **AI engineering:** RAG, semantic retrieval, embeddings, prompt engineering, context engineering, structured outputs, Ollama, Anthropic API, NVIDIA NIM
+- **Automation and data:** Scheduled pipelines, REST APIs, n8n, background jobs, Redis/RQ, entity resolution, deduplication, GitHub Actions
+- **Computer vision and 3D:** YOLO, OpenCV, Core ML, MediaPipe, Three.js, React Three Fiber, geospatial APIs
+- **Web and storage:** Next.js, React, Vue, FastAPI, Node.js, PostgreSQL, SQLite, MongoDB, Qdrant
+- **Delivery:** Docker, Cloudflare Workers and Pages, Vercel, Oracle Cloud, Git
 
 ## Selected Projects
 
