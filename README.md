@@ -20,12 +20,13 @@ The site presents my experience, technical skills, research, and selected work a
 
 ## Experience
 
-**Working Student — AI & Automation Engineer**
+**AI & Automation Engineer — Working Student**
 
-Soccerkinetics · July 2026–Present
+Soccerkinetics · July 2026–October 2026 · Nuremberg, Germany
 
-- Build AI and automation workflows for practical product and operational use cases.
-- Connect data, tools, and AI systems into reliable day-to-day processes.
+- Developed AI applications and automated data workflows as backend services, API integrations, and internal dashboards.
+- Built podcast summarization and financial-news monitoring tools with background processing, structured extraction, and persistent storage.
+- Contributed to an internal CRM for lead outreach, task coordination, and go-to-market execution.
 
 ## Core Skills
 
