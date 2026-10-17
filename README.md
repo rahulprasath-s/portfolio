@@ -39,29 +39,20 @@ Soccerkinetics · July 2026–October 2026 · Nuremberg, Germany
 
 ## Selected Projects
 
-### Local Workspace Context Optimizer
-
-A privacy-first developer tool that compresses local workspace state into reusable context capsules using prompt caching and structured outputs.
-
-`Python` `Anthropic API` `Prompt Caching` `CLI`
-
-### Archisight
-
-A full-stack 3D visualization application that transforms searched or manually traced building footprints into configurable, exportable massing models.
-
-`React` `Three.js` `Google Maps` `Express` `MongoDB`
-
-### Careflow Intelligence
-
-A fully local RAG system for securely querying sensitive medical documents without sending data to external cloud services.
-
-`Python` `FastAPI` `Ollama` `Qdrant` `Docker`
-
-### AI-Daily-Brief
-
-A multi-agent workflow that discovers, ranks, and summarizes AI research papers into a structured Notion knowledge base.
-
-`n8n` `Gemini` `Notion API` `Prompt Engineering`
+| Project | Focus | Primary technologies |
+| --- | --- | --- |
+| [AI Daily Brief](https://github.com/rahulprasath-s/AI-Daily-Brief) | Automated AI research and news pipeline | Python, GitHub Actions, NVIDIA NIM, Notion API |
+| Podcast Summarizer | Background transcription, chapters, and structured podcast summaries | Next.js, FastAPI, PostgreSQL, Redis/RQ, Ollama |
+| Financial News Monitoring | German financial-news collection and stock-identifier resolution | Python, FastAPI, SQLAlchemy, SQLite, OpenFIGI |
+| [Local Workspace Context Optimizer](https://github.com/rahulprasath-s/Local-Workspace-Context-Optimizer) | Privacy-first workspace snapshots and reusable context capsules | Python, Anthropic API, prompt caching |
+| [Archisight](https://github.com/rahulprasath-s/3D-Visualization-of-Buildings) | Map and satellite footprints converted into interactive 3D models | React, Three.js, Node.js, MongoDB |
+| [Mamba vs LSTM Forecasting](https://github.com/rahulprasath-s/mamba-vs-lstm-forecasting) | Reusable climate time-series forecasting benchmark | Python, PyTorch, CUDA |
+| [Crypto Dashboard CLI](https://github.com/rahulprasath-s/Crypto-Data-in-CLI) | Interactive cryptocurrency market terminal | TypeScript, Node.js, CoinGecko API |
+| [Quiz AI](https://github.com/rahulprasath-s/Quiz-AI) | Responsive typed quiz experience | Vue 3, TypeScript, Tailwind CSS |
+| [Claude Code Warmup](https://github.com/rahulprasath-s/claude-code-warmup) | Scheduled serverless AI warmup workflow | JavaScript, Vercel Cron, Anthropic API |
+| [Careflow Intelligence](https://github.com/rahulprasath-s/Careflow_Intelligence) | Private local RAG for medical PDFs | FastAPI, Streamlit, Qdrant, Ollama, Docker |
+| [FabricIRIS](https://github.com/rahulprasath-s/FabricIRIS-Textile-Defect) | Edge-AI textile defect inspection | YOLO, OpenCV, Core ML, Streamlit |
+| [Sign2Say](https://github.com/rahulprasath-s/Sign2Say) | Real-time gesture recognition and speech output | Python, OpenCV, MediaPipe, pyttsx3 |
 
 ## Education
 
