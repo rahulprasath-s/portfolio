@@ -1,12 +1,12 @@
-# Rahulprasath Selvaraj
+# Rahulprasath Selvaraj — Portfolio
 
-**AI & Automation Engineer · M.Sc. Human & Artificial Intelligence Student**
+Personal portfolio for **Rahulprasath Selvaraj**, an AI & Automation Engineer and M.Sc. Human & Artificial Intelligence student based in Nürnberg, Germany.
 
-I build practical AI systems and automation workflows that improve how people work. My interests include LLM applications, retrieval-augmented generation, privacy-first local AI, prompt engineering, and reliable workflow automation.
+The site presents my experience, technical skills, research, and selected work across LLM applications, workflow automation, local AI, computer vision, data engineering, and interactive 3D tools.
 
-Based in Nürnberg, Germany. Currently pursuing an M.Sc. in Human & Artificial Intelligence at the University of Technology Nuremberg and working part-time as an AI & Automation Engineer at Soccerkinetics.
+> Building AI that drives human efficiency.
 
-[LinkedIn](https://linkedin.com/in/rahulprasath-s) · [GitHub](https://github.com/rahulprasath-s) · [Email](mailto:rahulprasathselvaraj@gmail.com)
+[GitHub](https://github.com/rahulprasath-s) · [LinkedIn](https://linkedin.com/in/rahulprasath-s) · [Email](mailto:rahulprasathselvaraj@gmail.com)
 
 ## Experience
 
