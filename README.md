@@ -8,6 +8,16 @@ The site presents my experience, technical skills, research, and selected work a
 
 [GitHub](https://github.com/rahulprasath-s) · [LinkedIn](https://linkedin.com/in/rahulprasath-s) · [Email](mailto:rahulprasathselvaraj@gmail.com)
 
+## Website Features
+
+- Responsive single-page layout with smooth section navigation
+- Light and dark themes with saved user preference
+- Filterable project gallery with detailed project modals
+- Twelve project case studies with custom visual artwork
+- Experience, education, skills, publication, and achievement sections
+- Contact form powered by a Next.js API route and Resend
+- Accessible semantic structure and mobile-friendly interactions
+
 ## Experience
 
 **Working Student — AI & Automation Engineer**
