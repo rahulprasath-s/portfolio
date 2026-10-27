@@ -88,7 +88,7 @@ export const experiences: Experience[] = [
     startDate: "Jul 2026",
     endDate: "Oct 2026",
     employmentType: "Working Student",
-    location: "Nuremberg, Germany",
+    location: "Ingolstadt, Bavaria, Germany",
     description: [
       "Develop AI applications and automated data workflows, translating operational requirements into backend services, API integrations, and usable dashboards.",
       "Built podcast summarization and financial-news monitoring tools with background processing, structured extraction, and persistent job and article storage.",
