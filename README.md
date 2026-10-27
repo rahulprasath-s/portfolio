@@ -22,7 +22,7 @@ The site presents my experience, technical skills, research, and selected work a
 
 **AI & Automation Engineer — Working Student**
 
-Soccerkinetics · July 2026–October 2026 · Nuremberg, Germany
+Soccerkinetics · July 2026–October 2026 · Ingolstadt, Bavaria, Germany
 
 - Developed AI applications and automated data workflows as backend services, API integrations, and internal dashboards.
 - Built podcast summarization and financial-news monitoring tools with background processing, structured extraction, and persistent storage.
