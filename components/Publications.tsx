@@ -21,7 +21,7 @@ export default function Publications() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
-            <FileText className="w-8 h-8 text-orange-500" />
+            <FileText className="w-8 h-8 text-brand-ink" />
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
               Publications
             </h2>
@@ -32,7 +32,7 @@ export default function Publications() {
           {publications.map((pub, index) => (
             <motion.div
               key={index}
-              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-orange-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
+              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-brand-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function Publications() {
                   href={pub.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-orange-400"
+                  className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-neutral-950 shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-400"
                 >
                   <span>View Research Paper</span>
                   <ExternalLink className="w-4 h-4" />

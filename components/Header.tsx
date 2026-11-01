@@ -36,7 +36,7 @@ export default function Header() {
       <nav
         className={`mx-auto max-w-6xl rounded-[1.4rem] border px-5 transition-all duration-300 sm:px-8 ${
           isScrolled
-            ? "border-orange-500/30 bg-[#121212]/92 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+            ? "border-brand-500/30 bg-[#121212]/92 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-xl"
             : "border-white/10 bg-[#111111]/88 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl"
         }`}
       >
@@ -50,7 +50,7 @@ export default function Header() {
           >
             <span
               aria-hidden="true"
-              className="absolute h-6 w-6 rotate-45 rounded-[0.45rem] bg-orange-500 shadow-[0_8px_22px_rgba(249,115,22,0.34)] transition-transform duration-300 group-hover:rotate-[135deg]"
+              className="absolute h-6 w-6 rotate-45 rounded-[0.45rem] bg-brand-500 shadow-[0_8px_22px_rgba(3,255,70,0.34)] transition-transform duration-300 group-hover:rotate-[135deg]"
             />
             <span
               aria-hidden="true"
@@ -65,8 +65,8 @@ export default function Header() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-bold transition-colors hover:text-orange-500 ${
-                  index === 0 ? "text-orange-500" : "text-white/48"
+                className={`text-sm font-bold transition-colors hover:text-brand-ink ${
+                  index === 0 ? "text-brand-ink" : "text-white/48"
                 }`}
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.95 }}
@@ -79,7 +79,7 @@ export default function Header() {
           <div className="hidden items-center gap-3 md:flex">
             <motion.a
               href="#contact"
-              className="rounded-lg bg-orange-500 px-6 py-2.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(249,115,22,0.28)] transition-colors hover:bg-orange-400"
+              className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-bold text-neutral-950 shadow-[0_12px_30px_rgba(3,255,70,0.28)] transition-colors hover:bg-brand-400"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -87,7 +87,7 @@ export default function Header() {
             </motion.a>
             <motion.button
               onClick={toggleTheme}
-              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/60 transition-colors hover:border-orange-500/40 hover:text-orange-400"
+              className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/60 transition-colors hover:border-brand-500/40 hover:text-brand-ink"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle theme"
@@ -143,7 +143,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block rounded-lg px-4 py-2 text-sm font-bold text-white/60 transition-colors hover:bg-white/10 hover:text-orange-400"
+                    className="block rounded-lg px-4 py-2 text-sm font-bold text-white/60 transition-colors hover:bg-white/10 hover:text-brand-ink"
                   >
                     {item.name}
                   </a>
@@ -151,7 +151,7 @@ export default function Header() {
                 <a
                   href="#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block rounded-lg bg-orange-500 px-4 py-2 text-sm font-bold text-white"
+                  className="block rounded-lg bg-brand-500 px-4 py-2 text-sm font-bold text-neutral-950"
                 >
                   Contact Me
                 </a>

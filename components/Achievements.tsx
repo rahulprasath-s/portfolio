@@ -21,7 +21,7 @@ export default function Achievements() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
-            <Trophy className="w-8 h-8 text-orange-500" />
+            <Trophy className="w-8 h-8 text-brand-ink" />
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
               Achievements
             </h2>
@@ -32,7 +32,7 @@ export default function Achievements() {
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
-              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-orange-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
+              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-brand-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function Achievements() {
                 </div>
                 <div className="mt-2 md:mt-0">
                   {achievement.result && (
-                    <span className="inline-block rounded-full bg-orange-500 px-4 py-2 text-sm font-bold text-white shadow-md shadow-orange-500/20">
+                    <span className="inline-block rounded-full bg-brand-500 px-4 py-2 text-sm font-bold text-neutral-950 shadow-md shadow-brand-500/20">
                       {achievement.result}
                     </span>
                   )}

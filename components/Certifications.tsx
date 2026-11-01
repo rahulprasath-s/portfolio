@@ -21,7 +21,7 @@ export default function Certifications() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
-            <Award className="w-8 h-8 text-orange-500" />
+            <Award className="w-8 h-8 text-brand-ink" />
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
               Certifications & Workshops
             </h2>
@@ -31,16 +31,16 @@ export default function Certifications() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => {
             const accents = [
-              "before:bg-orange-500",
+              "before:bg-brand-500",
               "before:bg-white/20",
-              "before:bg-orange-500",
+              "before:bg-brand-500",
               "before:bg-white/20",
-              "before:bg-orange-500",
+              "before:bg-brand-500",
             ];
             return (
               <motion.div
                 key={index}
-                className={`relative overflow-hidden rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all before:absolute before:inset-x-0 before:top-0 before:h-1 hover:border-orange-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)] ${accents[index % accents.length]}`}
+                className={`relative overflow-hidden rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all before:absolute before:inset-x-0 before:top-0 before:h-1 hover:border-brand-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)] ${accents[index % accents.length]}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}

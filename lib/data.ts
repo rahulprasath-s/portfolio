@@ -215,9 +215,9 @@ export const projects: Project[] = [
   {
     id: "ai-daily-brief",
     title: "AI Daily Brief",
-    description: "Automated cloud pipeline that collects, ranks, summarizes, and publishes high-signal AI research and news to Notion twice daily.",
-    longDescription: "Built a scheduled Python pipeline that gathers papers and news from arXiv, Hacker News, Hugging Face, and Techmeme. NVIDIA NIM ranks and summarizes selected items before publishing them to Notion. Timezone-aware filtering, historical deduplication, Date + Rank guards, and reconciliation runs prevent duplicate content while filling missing entries.",
-    technologies: ["Python", "GitHub Actions", "NVIDIA NIM", "Notion API", "Cloudflare Workers", "RSS"],
+    description: "Automated Python pipeline that uses NVIDIA NIM to rank and summarize AI news and model updates, publishing daily briefs to Notion with historical deduplication.",
+    longDescription: "Built a Python pipeline that collects AI news and model updates from Hacker News, Hugging Face, and Techmeme. NVIDIA NIM ranks eligible stories by relevance and summarizes up to 10 items for structured publication to Notion, checking historical links, titles, and summary similarity to prevent duplicates. GitHub Actions runs daily at 08:00 Europe/Berlin with automatic daylight-saving adjustment, covering the previous calendar day. Manual retries, dated backfills, optional Cloudflare Worker debug endpoints, and 22 automated tests support reliable operation.",
+    technologies: ["Python", "GitHub Actions", "NVIDIA NIM", "Notion API"],
     category: "Workflow Automation",
     image: "/project-ai-daily-brief-v2.jpg",
     githubUrl: "https://github.com/rahulprasath-s/AI-Daily-Brief",

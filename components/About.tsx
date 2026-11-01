@@ -9,7 +9,7 @@ export default function About() {
       id="about"
       className="relative overflow-hidden bg-[#0b0b0b] px-4 py-20 text-white sm:px-6 lg:px-8"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(249,115,22,0.10),transparent_30%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(3,255,70,0.10),transparent_30%)]" />
       <div className="container mx-auto max-w-6xl">
         {/* About Me Title */}
         <motion.div
@@ -34,7 +34,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="flex flex-col justify-center border-b border-white/10 p-7 sm:p-9 lg:border-b-0 lg:border-r">
-            <span className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+            <span className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-ink">
               Professional summary
             </span>
             <p className="text-base leading-relaxed text-white/68 sm:text-lg">
@@ -49,7 +49,7 @@ export default function About() {
                 className="grid gap-2 p-6 sm:grid-cols-[8rem_1fr] sm:gap-5 sm:px-8"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-500/[0.12] text-xs font-black text-orange-500">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-500/[0.12] text-xs font-black text-brand-ink">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm font-extrabold text-white">

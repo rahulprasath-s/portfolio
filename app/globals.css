@@ -6,7 +6,10 @@
   color-scheme: light;
   --background: 40 24% 95%;
   --foreground: 30 8% 12%;
-  --primary: 217 91% 60%;
+  --primary: 136 100% 22%;
+  --brand: 3 255 70;
+  --brand-hover: 64 255 116;
+  --brand-ink: 0 112 29;
   --secondary: 0 0% 96%;
   --accent: 280 100% 70%;
   --muted: 0 0% 92%;
@@ -14,15 +17,15 @@
   --accent-blue: 217 91% 60%;
   --accent-purple: 280 100% 70%;
   --accent-pink: 330 81% 60%;
-  --accent-orange: 25 95% 53%;
-  --accent-green: 142 71% 45%;
+  --accent-green: 136 100% 51%;
 }
 
 .dark {
   color-scheme: dark;
   --background: 0 0% 4%;
   --foreground: 0 0% 95%;
-  --primary: 217 91% 60%;
+  --primary: 136 100% 51%;
+  --brand-ink: 3 255 70;
   --secondary: 0 0% 12%;
   --accent: 280 100% 70%;
   --muted: 0 0% 15%;
@@ -30,8 +33,7 @@
   --accent-blue: 217 91% 60%;
   --accent-purple: 280 100% 70%;
   --accent-pink: 330 81% 60%;
-  --accent-orange: 25 95% 53%;
-  --accent-green: 142 71% 45%;
+  --accent-green: 136 100% 51%;
 }
 
 * {
@@ -97,7 +99,6 @@ html:not(.dark) [class*="border-[#0b0b0b]"] {
   border-color: #f4f1ea !important;
 }
 
-html:not(.dark) [class*="bg-orange-"][class~="text-white"],
 html:not(.dark) .theme-inverse [class~="text-white"],
 html:not(.dark) .theme-inverse [class*="text-white/"] {
   color: #fff !important;
@@ -105,14 +106,14 @@ html:not(.dark) .theme-inverse [class*="text-white/"] {
 
 .hero-wash {
   background:
-    radial-gradient(circle at 18% 45%, rgba(249, 115, 22, 0.14), transparent 30%),
+    radial-gradient(circle at 18% 45%, rgb(var(--brand) / 0.14), transparent 30%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0, transparent 22%, transparent 70%, rgba(255, 255, 255, 0.06) 100%);
 }
 
 html:not(.dark) .hero-wash {
   background:
-    radial-gradient(circle at 18% 45%, rgba(249, 115, 22, 0.13), transparent 32%),
-    linear-gradient(135deg, rgba(120, 96, 68, 0.06) 0, transparent 24%, transparent 72%, rgba(249, 115, 22, 0.05) 100%);
+    radial-gradient(circle at 18% 45%, rgb(var(--brand) / 0.13), transparent 32%),
+    linear-gradient(135deg, rgba(120, 96, 68, 0.06) 0, transparent 24%, transparent 72%, rgb(var(--brand) / 0.05) 100%);
 }
 
 .profile-frame {
@@ -132,8 +133,8 @@ html:not(.dark) .profile-vignette {
 }
 
 ::selection {
-  background: rgba(249, 115, 22, 0.35);
-  color: #fff;
+  background: rgb(var(--brand) / 0.35);
+  color: hsl(var(--foreground));
 }
 
 @layer utilities {

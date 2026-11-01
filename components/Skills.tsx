@@ -21,7 +21,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative overflow-hidden bg-[#0b0b0b] px-4 py-20 text-white sm:px-6 lg:px-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(249,115,22,0.10),transparent_30%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(3,255,70,0.10),transparent_30%)]" />
       <div className="container mx-auto max-w-6xl">
         <motion.div
           className="relative z-10 flex justify-center mb-12"
@@ -41,7 +41,7 @@ export default function Skills() {
           {categories.map((category, categoryIndex) => (
             <motion.div
               key={category}
-              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-orange-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
+              className="rounded-3xl border border-white/10 bg-[#151515] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-brand-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function Skills() {
                 {skillsByCategory[category].map((skill, skillIndex) => (
                   <motion.span
                     key={skillIndex}
-                    className="rounded-full bg-white/[0.04] px-3 py-1 text-sm font-semibold text-white/58 ring-1 ring-white/10 transition-colors hover:bg-orange-500/10 hover:text-orange-400 hover:ring-orange-500/20"
+                    className="rounded-full bg-white/[0.04] px-3 py-1 text-sm font-semibold text-white/58 ring-1 ring-white/10 transition-colors hover:bg-brand-500/10 hover:text-brand-ink hover:ring-brand-500/20"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}

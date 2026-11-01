@@ -47,7 +47,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-orange-500 sm:text-5xl lg:text-7xl"
+              className="mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-brand-ink sm:text-5xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -65,7 +65,7 @@ export default function Hero() {
               {personalInfo.email && (
                 <motion.a
                   href={`mailto:${personalInfo.email}`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-brand-500/60 hover:text-brand-ink"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -77,7 +77,7 @@ export default function Hero() {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-brand-500/60 hover:text-brand-ink"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -89,7 +89,7 @@ export default function Hero() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-orange-500/60 hover:text-orange-500"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.03] text-white/48 transition-all hover:border-brand-500/60 hover:text-brand-ink"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -116,7 +116,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="absolute h-[28rem] w-[28rem] rounded-full bg-white/[0.045]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_48%,rgba(249,115,22,0.10),transparent_32%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_48%,rgba(3,255,70,0.10),transparent_32%)]" />
           
           <motion.div
             className="relative z-10"
@@ -149,7 +149,7 @@ export default function Hero() {
           >
             <motion.a
               href="#about"
-              className="flex flex-col items-center text-white/35 transition-colors hover:text-orange-500"
+              className="flex flex-col items-center text-white/35 transition-colors hover:text-brand-ink"
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >

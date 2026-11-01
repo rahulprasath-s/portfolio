@@ -41,7 +41,7 @@ Soccerkinetics · July 2026–October 2026 · Ingolstadt, Bavaria, Germany
 
 | Project | Focus | Primary technologies |
 | --- | --- | --- |
-| [AI Daily Brief](https://github.com/rahulprasath-s/AI-Daily-Brief) | Automated AI research and news pipeline | Python, GitHub Actions, NVIDIA NIM, Notion API |
+| [AI Daily Brief](https://github.com/rahulprasath-s/AI-Daily-Brief) | Daily AI news and model-update briefs with AI ranking and historical deduplication | Python, GitHub Actions, NVIDIA NIM, Notion API |
 | Podcast Summarizer | Background transcription, chapters, and structured podcast summaries | Next.js, FastAPI, PostgreSQL, Redis/RQ, Ollama |
 | Financial News Monitoring | German financial-news collection and stock-identifier resolution | Python, FastAPI, SQLAlchemy, SQLite, OpenFIGI |
 | [Local Workspace Context Optimizer](https://github.com/rahulprasath-s/Local-Workspace-Context-Optimizer) | Privacy-first workspace snapshots and reusable context capsules | Python, Anthropic API, prompt caching |

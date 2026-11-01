@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          400: "rgb(var(--brand-hover) / <alpha-value>)",
+          500: "rgb(var(--brand) / <alpha-value>)",
+          ink: "rgb(var(--brand-ink) / <alpha-value>)",
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
@@ -37,4 +42,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-

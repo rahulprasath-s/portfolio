@@ -28,11 +28,11 @@ export default function Projects() {
       case "Developer Tools":
         return "from-emerald-500/25 via-cyan-500/20 to-blue-500/25";
       case "3D Visualization":
-        return "from-orange-500/25 via-rose-500/20 to-fuchsia-500/25";
+        return "from-brand-500/25 via-rose-500/20 to-fuchsia-500/25";
       case "Workflow Automation":
         return "from-violet-500/25 via-indigo-500/20 to-sky-500/25";
       case "Computer Vision":
-        return "from-amber-500/25 via-orange-500/20 to-red-500/25";
+        return "from-amber-500/25 via-brand-500/20 to-red-500/25";
       default:
         return "from-blue-500/20 via-purple-500/20 to-pink-500/20";
     }
@@ -43,7 +43,7 @@ export default function Projects() {
       id="projects"
       className="relative isolate overflow-hidden bg-[#0b0b0b] px-4 py-20 text-white sm:px-6 lg:px-8"
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.14),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_34%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(3,255,70,0.14),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_34%)]" />
       <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="container mx-auto max-w-7xl">
         {/* Projects Title */}
@@ -54,7 +54,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-orange-500">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-brand-ink">
             Project Portfolio
           </p>
           <div className="inline-flex rounded-2xl border border-white/10 bg-[#151515] px-7 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
@@ -81,8 +81,8 @@ export default function Projects() {
               onClick={() => setFilter(category)}
               className={`rounded-full px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.16em] transition-all duration-300 ${
                 filter === category
-                  ? "bg-orange-500 text-white shadow-lg shadow-orange-500/20 scale-105"
-                  : "border border-white/10 bg-white/[0.035] text-white/48 shadow-sm hover:-translate-y-0.5 hover:border-orange-500/50 hover:text-orange-400 hover:shadow-md"
+                  ? "bg-brand-500 text-neutral-950 shadow-lg shadow-brand-500/20 scale-105"
+                  : "border border-white/10 bg-white/[0.035] text-white/48 shadow-sm hover:-translate-y-0.5 hover:border-brand-500/50 hover:text-brand-ink hover:shadow-md"
               }`}
             >
               {category}
@@ -96,7 +96,7 @@ export default function Projects() {
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="group cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-[#151515] shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-orange-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
+                className="group cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-[#151515] shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition-all hover:border-brand-500/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function Projects() {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.2),transparent_16%),radial-gradient(circle_at_68%_58%,rgba(249,115,22,0.4),transparent_18%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_35%,rgba(255,255,255,0.2),transparent_16%),radial-gradient(circle_at_68%_58%,rgba(3,255,70,0.4),transparent_18%)]" />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
                   <span className="absolute left-4 top-4 max-w-[calc(100%-2rem)] truncate rounded-full border border-white/20 bg-black/55 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
@@ -122,16 +122,16 @@ export default function Projects() {
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="mb-3 text-2xl font-extrabold leading-tight text-white transition-colors group-hover:text-orange-500">{project.title}</h3>
+                  <h3 className="mb-3 text-2xl font-extrabold leading-tight text-white transition-colors group-hover:text-brand-ink">{project.title}</h3>
                   <p className="mb-5 text-sm leading-6 text-white/50 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="mb-5 flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, i) => {
                       const colors = [
-                        "bg-orange-500/10 text-orange-400 ring-orange-500/10",
+                        "bg-brand-500/10 text-brand-ink ring-brand-500/10",
                         "bg-white/5 text-white/56 ring-white/10",
-                        "bg-orange-500/10 text-orange-400 ring-orange-500/10",
+                        "bg-brand-500/10 text-brand-ink ring-brand-500/10",
                       ];
                       return (
                         <span
@@ -149,7 +149,7 @@ export default function Projects() {
                     )}
                   </div>
                   <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-4">
-                    <span className="text-xs font-bold uppercase tracking-[0.18em] text-white/35 transition-colors group-hover:text-orange-500">
+                    <span className="text-xs font-bold uppercase tracking-[0.18em] text-white/35 transition-colors group-hover:text-brand-ink">
                       View details
                     </span>
                     <div className="flex gap-3">
@@ -159,7 +159,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-white/35 transition-colors hover:text-orange-500"
+                        className="text-white/35 transition-colors hover:text-brand-ink"
                       >
                         <Github className="w-5 h-5" />
                       </a>
@@ -170,7 +170,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="text-white/35 transition-colors hover:text-orange-500"
+                        className="text-white/35 transition-colors hover:text-brand-ink"
                       >
                         <ExternalLink className="w-5 h-5" />
                       </a>
@@ -211,7 +211,7 @@ export default function Projects() {
                       <h3 className="text-3xl font-extrabold text-white">{project.title}</h3>
                       <button
                         onClick={() => setSelectedProject(null)}
-                        className="rounded-full p-2 text-white/45 transition-colors hover:bg-white/10 hover:text-orange-500"
+                        className="rounded-full p-2 text-white/45 transition-colors hover:bg-white/10 hover:text-brand-ink"
                       >
                         <X className="w-6 h-6" />
                       </button>
@@ -220,11 +220,11 @@ export default function Projects() {
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies.map((tech, i) => {
                         const colors = [
-                          "bg-orange-500/10 text-orange-400 border-orange-500/20",
+                          "bg-brand-500/10 text-brand-ink border-brand-500/20",
                           "bg-white/5 text-white/58 border-white/10",
-                          "bg-orange-500/10 text-orange-400 border-orange-500/20",
+                          "bg-brand-500/10 text-brand-ink border-brand-500/20",
                           "bg-white/5 text-white/58 border-white/10",
-                          "bg-orange-500/10 text-orange-400 border-orange-500/20",
+                          "bg-brand-500/10 text-brand-ink border-brand-500/20",
                         ];
                         return (
                           <span
@@ -242,7 +242,7 @@ export default function Projects() {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white transition-colors hover:border-orange-500/40 hover:text-orange-400"
+                          className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white transition-colors hover:border-brand-500/40 hover:text-brand-ink"
                         >
                           <Github className="w-5 h-5" />
                           <span>GitHub</span>
@@ -253,7 +253,7 @@ export default function Projects() {
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:bg-orange-400"
+                          className="flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-neutral-950 shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-400"
                         >
                           <ExternalLink className="w-5 h-5" />
                           <span>Live Demo</span>
