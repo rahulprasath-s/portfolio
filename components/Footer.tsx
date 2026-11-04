@@ -1,9 +1,12 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,10 +19,9 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          © {currentYear} {personalInfo.name}. All rights reserved.
+          © {currentYear} {personalInfo.name}. {t("All rights reserved.")}
         </motion.p>
       </div>
     </footer>
   );
 }
-

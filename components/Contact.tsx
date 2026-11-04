@@ -1,11 +1,14 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, ChevronUp, Mail, Linkedin, Github } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -69,7 +72,7 @@ export default function Contact() {
           >
             <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-                Contact
+                {t("Contact")}
               </h2>
             </div>
           </motion.div>
@@ -82,7 +85,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I&apos;m always open to discussing new opportunities and interesting projects. Feel free to reach out!
+            {t("I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!")}
           </motion.p>
 
           {/* Decorative Separator */}
@@ -112,7 +115,7 @@ export default function Contact() {
                 htmlFor="name"
                 className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
-                Enter Your Name *
+                {t("Enter Your Name *")}
               </label>
               <input
                 type="text"
@@ -129,7 +132,7 @@ export default function Contact() {
                 htmlFor="email"
                 className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
-                Enter Your Email *
+                {t("Enter Your Email *")}
               </label>
               <input
                 type="email"
@@ -146,7 +149,7 @@ export default function Contact() {
                 htmlFor="phone"
                 className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
-                Phone Number
+                {t("Phone Number")}
               </label>
               <input
                 type="tel"
@@ -162,7 +165,7 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-sm font-bold mb-2 text-white uppercase tracking-[0.14em]"
               >
-                Your Message *
+                {t("Your Message *")}
               </label>
               <textarea
                 id="message"
@@ -185,15 +188,15 @@ export default function Contact() {
               >
                 <span className="flex items-center gap-2">
                   {status === "loading" ? (
-                    "Sending..."
+                    t("Sending...")
                   ) : status === "success" ? (
-                    "Sent!"
+                    t("Sent!")
                   ) : status === "error" ? (
-                    "Error - Try Again"
+                    t("Error - Try Again")
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      Submit
+                      {t("Submit")}
                     </>
                   )}
                 </span>
@@ -207,13 +210,13 @@ export default function Contact() {
                   status === "success" ? "text-green-400" : "text-red-400"
                 }`}
               >
-                {statusMessage}{" "}
+                {t(statusMessage)}{" "}
                 {status === "error" && (
                   <a
                     href={`mailto:${personalInfo.email}`}
                     className="font-semibold text-brand-ink underline underline-offset-4"
                   >
-                    Email me
+                    {t("Email me")}
                   </a>
                 )}
               </p>
@@ -240,7 +243,7 @@ export default function Contact() {
               whileTap={{ scale: 0.95 }}
             >
               <ChevronUp className="w-6 h-6" />
-              <span>Back to Top</span>
+              <span>{t("Back to Top")}</span>
             </motion.button>
           </motion.div>
 
@@ -296,7 +299,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            © {new Date().getFullYear()} {personalInfo.name} All Rights Reserved.
+            © {new Date().getFullYear()} {personalInfo.name} {t("All Rights Reserved.")}
           </motion.p>
         </div>
       </footer>

@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return (
-    <main>
+    <main className="portfolio-content">
       <Header />
       <Hero />
       <About />
@@ -29,4 +29,3 @@ export default function Home() {
     </main>
   );
 }
-

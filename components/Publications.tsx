@@ -1,10 +1,13 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { FileText, ExternalLink } from "lucide-react";
 import { publications } from "@/lib/data";
 
 export default function Publications() {
+  const { t } = useLanguage();
   if (publications.length === 0) {
     return null;
   }
@@ -23,7 +26,7 @@ export default function Publications() {
           <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <FileText className="w-8 h-8 text-brand-ink" />
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-              Publications
+              {t("Publications")}
             </h2>
           </div>
         </motion.div>
@@ -41,12 +44,12 @@ export default function Publications() {
             >
               <h3 className="text-xl font-extrabold text-white mb-2">{pub.title}</h3>
               <div className="flex flex-wrap items-center gap-4 text-white/58 mb-3">
-                <span className="font-semibold">{pub.venue}</span>
+                <span className="font-semibold">{t(pub.venue)}</span>
                 <span className="text-white/28">•</span>
-                <span>{pub.date}</span>
+                <span>{t(pub.date)}</span>
               </div>
               {pub.description && (
-                <p className="text-white/50 mt-4 mb-4 leading-relaxed">{pub.description}</p>
+                <p className="text-white/50 mt-4 mb-4 leading-relaxed">{t(pub.description)}</p>
               )}
               {pub.link && (
                 <a
@@ -55,7 +58,7 @@ export default function Publications() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-neutral-950 shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-400"
                 >
-                  <span>View Research Paper</span>
+                  <span>{t("View Research Paper")}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
               )}

@@ -46,6 +46,20 @@ html {
   scroll-behavior: smooth;
 }
 
+.portfolio-content h2,
+.portfolio-content h3,
+.hero-role {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+html[lang="de"] .hero-role {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));

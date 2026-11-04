@@ -1,11 +1,14 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { personalInfo } from "@/lib/data";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section
       id="home"
@@ -32,7 +35,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Hi, I am
+              {t("Hi, I am")}
             </motion.p>
             
             <motion.h1
@@ -47,12 +50,12 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-brand-ink sm:text-5xl lg:text-7xl"
+              className="hero-role mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-brand-ink sm:text-5xl lg:text-7xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {personalInfo.title}
+              {t(personalInfo.title)}
             </motion.p>
 
             {/* Social Media Icons */}
@@ -104,7 +107,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.9 }}
             >
-              Building AI that drives human efficiency
+              {t("Building AI that drives human efficiency")}
             </motion.p>
           </motion.div>
         </motion.div>
@@ -153,7 +156,7 @@ export default function Hero() {
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <span className="text-sm mb-2 uppercase tracking-wider">Scroll</span>
+              <span className="text-sm mb-2 uppercase tracking-wider">{t("Scroll")}</span>
               <ArrowDown className="w-5 h-5" />
             </motion.a>
           </motion.div>

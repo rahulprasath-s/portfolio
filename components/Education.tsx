@@ -1,10 +1,13 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import { education } from "@/lib/data";
 
 export default function Education() {
+  const { t } = useLanguage();
   if (education.length === 0) {
     return null;
   }
@@ -23,7 +26,7 @@ export default function Education() {
         >
           <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-              Education
+              {t("Education")}
             </h2>
           </div>
         </motion.div>
@@ -47,12 +50,12 @@ export default function Education() {
 
                 <div className="md:flex md:items-center">
                   <div className="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
-                    <h3 className="text-2xl font-extrabold text-white">{edu.degree}</h3>
-                    <p className="mt-1 font-semibold text-white/62">{edu.institution}</p>
+                    <h3 className="text-2xl font-extrabold text-white">{t(edu.degree)}</h3>
+                    <p className="mt-1 font-semibold text-white/62">{t(edu.institution)}</p>
                     <div className="flex items-center gap-2 text-sm text-white/42 mt-3 md:justify-end">
                       <Calendar className="w-4 h-4" />
                       <span>
-                        {edu.startDate} - {edu.endDate}
+                        {t(edu.startDate)} - {t(edu.endDate)}
                       </span>
                     </div>
                   </div>
@@ -62,13 +65,13 @@ export default function Education() {
                       {edu.description && (
                         <div className="flex items-start text-white/58">
                           <span className="text-brand-ink mr-2 font-bold">•</span>
-                          <p className="leading-relaxed">{edu.description}</p>
+                          <p className="leading-relaxed">{t(edu.description)}</p>
                         </div>
                       )}
                       {edu.field && (
                         <div className="mt-4 flex flex-wrap gap-2">
                           <span className="px-3 py-1 text-xs rounded-full border border-brand-500/20 bg-brand-500/10 font-medium text-brand-ink">
-                            {edu.field}
+                            {t(edu.field)}
                           </span>
                         </div>
                       )}

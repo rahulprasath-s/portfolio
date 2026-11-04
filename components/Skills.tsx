@@ -1,9 +1,12 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
 
 export default function Skills() {
+  const { t } = useLanguage();
   if (skills.length === 0) {
     return null;
   }
@@ -32,7 +35,7 @@ export default function Skills() {
         >
           <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-              Skills
+              {t("Skills")}
             </h2>
           </div>
         </motion.div>
@@ -48,7 +51,7 @@ export default function Skills() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             >
-              <h3 className="mb-5 text-xl font-extrabold text-white">{category}</h3>
+              <h3 className="mb-5 text-xl font-extrabold text-white">{t(category)}</h3>
               <div className="flex flex-wrap gap-2">
                 {skillsByCategory[category].map((skill, skillIndex) => (
                   <motion.span
@@ -59,7 +62,7 @@ export default function Skills() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
                   >
-                    {skill.name}
+                    {t(skill.name)}
                   </motion.span>
                 ))}
               </div>

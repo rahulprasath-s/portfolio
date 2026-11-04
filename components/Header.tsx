@@ -1,11 +1,15 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import LanguageToggle from "./LanguageToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
+  const { t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,11 +23,11 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
+    { name: t("Home"), href: "#home" },
+    { name: t("About"), href: "#about" },
+    { name: t("Experience"), href: "#experience" },
+    { name: t("Skills"), href: "#skills" },
+    { name: t("Projects"), href: "#projects" },
   ];
 
   return (
@@ -43,7 +47,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between gap-5">
           <motion.a
             href="#home"
-            aria-label="Go to home"
+            aria-label={t("Go to home")}
             className="group relative flex h-9 w-9 items-center justify-center"
             whileHover={{ rotate: 8, scale: 1.08 }}
             whileTap={{ scale: 0.94 }}
@@ -60,10 +64,10 @@ export default function Header() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-8 md:flex">
+          <div className="hidden items-center gap-5 lg:flex">
             {navItems.map((item, index) => (
               <motion.a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className={`text-sm font-bold transition-colors hover:text-brand-ink ${
                   index === 0 ? "text-brand-ink" : "text-white/48"
@@ -76,21 +80,21 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden shrink-0 items-center gap-3 lg:flex">
             <motion.a
               href="#contact"
               className="rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-bold text-neutral-950 shadow-[0_12px_30px_rgba(3,255,70,0.28)] transition-colors hover:bg-brand-400"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
-              Contact Me
+              {t("Contact Me")}
             </motion.a>
             <motion.button
               onClick={toggleTheme}
               className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/60 transition-colors hover:border-brand-500/40 hover:text-brand-ink"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              aria-label="Toggle theme"
+              aria-label={t("Toggle theme")}
             >
               {theme === "light" ? (
                 <Moon className="w-5 h-5" />
@@ -98,15 +102,16 @@ export default function Header() {
                 <Sun className="w-5 h-5" />
               )}
             </motion.button>
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="flex shrink-0 items-center gap-3 lg:hidden">
             <motion.button
               onClick={toggleTheme}
               className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/70"
               whileTap={{ scale: 0.9 }}
-              aria-label="Toggle theme"
+              aria-label={t("Toggle theme")}
             >
               {theme === "light" ? (
                 <Moon className="w-5 h-5" />
@@ -114,10 +119,13 @@ export default function Header() {
                 <Sun className="w-5 h-5" />
               )}
             </motion.button>
+            <LanguageToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="rounded-lg border border-white/10 bg-white/5 p-2 text-white/70"
-              aria-label="Toggle menu"
+              aria-label={t("Toggle menu")}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? (
                 <X className="w-5 h-5" />
@@ -135,12 +143,13 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="overflow-hidden border-t border-white/10 bg-[#111111]/95 backdrop-blur-xl md:hidden"
+              id="mobile-navigation"
+              className="overflow-hidden border-t border-white/10 bg-[#111111]/95 backdrop-blur-xl lg:hidden"
             >
               <div className="py-4 space-y-2">
                 {navItems.map((item) => (
                   <a
-                    key={item.name}
+                    key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block rounded-lg px-4 py-2 text-sm font-bold text-white/60 transition-colors hover:bg-white/10 hover:text-brand-ink"
@@ -153,7 +162,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block rounded-lg bg-brand-500 px-4 py-2 text-sm font-bold text-neutral-950"
                 >
-                  Contact Me
+                  {t("Contact Me")}
                 </a>
               </div>
             </motion.div>

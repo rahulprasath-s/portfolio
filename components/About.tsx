@@ -1,9 +1,12 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 
 export default function About() {
+  const { t } = useLanguage();
   return (
     <section
       id="about"
@@ -21,7 +24,7 @@ export default function About() {
         >
           <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-              About Me
+              {t("About Me")}
             </h2>
           </div>
         </motion.div>
@@ -35,10 +38,10 @@ export default function About() {
         >
           <div className="flex flex-col justify-center border-b border-white/10 p-7 sm:p-9 lg:border-b-0 lg:border-r">
             <span className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-brand-ink">
-              Professional summary
+              {t("Professional summary")}
             </span>
             <p className="text-base leading-relaxed text-white/68 sm:text-lg">
-              {personalInfo.bio}
+              {t(personalInfo.bio)}
             </p>
           </div>
 
@@ -53,11 +56,11 @@ export default function About() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm font-extrabold text-white">
-                    {highlight.label}
+                    {t(highlight.label)}
                   </span>
                 </div>
                 <p className="pl-10 text-sm leading-relaxed text-white/55 sm:pl-0">
-                  {highlight.text}
+                  {t(highlight.text)}
                 </p>
               </li>
             ))}
@@ -73,18 +76,18 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="rounded-2xl border border-white/8 bg-white/[0.035] px-6 py-4 shadow-sm">
-              <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">Location</span>
-              <p className="font-bold text-white">{personalInfo.location}</p>
+              <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">{t("Location")}</span>
+              <p className="font-bold text-white">{t(personalInfo.location)}</p>
             </div>
             {personalInfo.email && (
               <div className="rounded-2xl border border-white/8 bg-white/[0.035] px-6 py-4 shadow-sm">
-                <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">Email</span>
+                <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">{t("Email")}</span>
                 <p className="break-all font-bold text-white">{personalInfo.email}</p>
               </div>
             )}
             {personalInfo.phone && (
               <div className="rounded-2xl border border-white/8 bg-white/[0.035] px-6 py-4 shadow-sm">
-                <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">Phone</span>
+                <span className="text-xs uppercase tracking-[0.18em] text-white/35 block mb-1">{t("Phone")}</span>
                 <p className="font-bold text-white">{personalInfo.phone}</p>
               </div>
             )}

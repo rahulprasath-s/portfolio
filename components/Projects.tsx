@@ -1,5 +1,7 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, X } from "lucide-react";
@@ -7,6 +9,7 @@ import Image from "next/image";
 import { projects } from "@/lib/data";
 
 export default function Projects() {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>("All");
 
@@ -55,15 +58,15 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-brand-ink">
-            Project Portfolio
+            {t("Project Portfolio")}
           </p>
           <div className="inline-flex rounded-2xl border border-white/10 bg-[#151515] px-7 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-[0.18em] text-white">
-              Projects
+              {t("Projects")}
             </h2>
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-white/52">
-            Public GitHub builds and professional work across AI engineering, automation, developer tooling, computer vision, data, and interactive web experiences.
+            {t("Public GitHub builds and professional work across AI engineering, automation, developer tooling, computer vision, data, and interactive web experiences.")}
           </p>
         </motion.div>
 
@@ -85,7 +88,7 @@ export default function Projects() {
                   : "border border-white/10 bg-white/[0.035] text-white/48 shadow-sm hover:-translate-y-0.5 hover:border-brand-500/50 hover:text-brand-ink hover:shadow-md"
               }`}
             >
-              {category}
+              {t(category)}
             </button>
           ))}
         </motion.div>
@@ -118,13 +121,13 @@ export default function Projects() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
                   <span className="absolute left-4 top-4 max-w-[calc(100%-2rem)] truncate rounded-full border border-white/20 bg-black/55 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
-                    {project.category || "Project"}
+                    {t(project.category || "Project")}
                   </span>
                 </div>
                 <div className="p-6">
                   <h3 className="mb-3 text-2xl font-extrabold leading-tight text-white transition-colors group-hover:text-brand-ink">{project.title}</h3>
                   <p className="mb-5 text-sm leading-6 text-white/50 line-clamp-2">
-                    {project.description}
+                    {t(project.description)}
                   </p>
                   <div className="mb-5 flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, i) => {
@@ -138,7 +141,7 @@ export default function Projects() {
                           key={i}
                           className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 ${colors[i % colors.length]}`}
                         >
-                          {tech}
+                          {t(tech)}
                         </span>
                       );
                     })}
@@ -150,7 +153,7 @@ export default function Projects() {
                   </div>
                   <div className="flex items-center justify-between gap-3 border-t border-white/10 pt-4">
                     <span className="text-xs font-bold uppercase tracking-[0.18em] text-white/35 transition-colors group-hover:text-brand-ink">
-                      View details
+                      {t("View details")}
                     </span>
                     <div className="flex gap-3">
                     {project.githubUrl && (
@@ -211,12 +214,13 @@ export default function Projects() {
                       <h3 className="text-3xl font-extrabold text-white">{project.title}</h3>
                       <button
                         onClick={() => setSelectedProject(null)}
+                        aria-label={t("Close project details")}
                         className="rounded-full p-2 text-white/45 transition-colors hover:bg-white/10 hover:text-brand-ink"
                       >
                         <X className="w-6 h-6" />
                       </button>
                     </div>
-                    <p className="mb-6 leading-relaxed text-white/58">{project.longDescription || project.description}</p>
+                    <p className="mb-6 leading-relaxed text-white/58">{t(project.longDescription || project.description)}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies.map((tech, i) => {
                         const colors = [
@@ -231,7 +235,7 @@ export default function Projects() {
                             key={i}
                             className={`px-3 py-1 text-sm rounded-full border font-medium ${colors[i % colors.length]}`}
                           >
-                            {tech}
+                            {t(tech)}
                           </span>
                         );
                       })}
@@ -256,7 +260,7 @@ export default function Projects() {
                           className="flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-neutral-950 shadow-lg shadow-brand-500/20 transition-all hover:bg-brand-400"
                         >
                           <ExternalLink className="w-5 h-5" />
-                          <span>Live Demo</span>
+                          <span>{t("Live Demo")}</span>
                         </a>
                       )}
                     </div>

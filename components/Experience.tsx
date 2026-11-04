@@ -1,10 +1,13 @@
 "use client";
 
+import { useLanguage } from "./LanguageProvider";
+
 import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import { experiences } from "@/lib/data";
 
 export default function Experience() {
+  const { t } = useLanguage();
   if (experiences.length === 0) {
     return null;
   }
@@ -23,7 +26,7 @@ export default function Experience() {
         >
           <div className="rounded-2xl border border-white/10 bg-[#151515] px-8 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)]">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-[0.18em] text-white">
-              Experience
+              {t("Experience")}
             </h2>
           </div>
         </motion.div>
@@ -47,23 +50,23 @@ export default function Experience() {
 
                 <div className="md:flex md:items-center">
                   <div className="md:w-1/2 md:pr-8 md:text-right mb-4 md:mb-0">
-                    <h3 className="text-2xl font-extrabold text-white">{exp.role}</h3>
+                    <h3 className="text-2xl font-extrabold text-white">{t(exp.role)}</h3>
                     <p className="mt-1 font-semibold text-white/62">
                       {exp.company}
                       {exp.employmentType && (
-                        <span className="text-white/42"> · {exp.employmentType}</span>
+                        <span className="text-white/42"> · {t(exp.employmentType)}</span>
                       )}
                     </p>
                     <div className="flex items-center gap-2 text-sm text-white/42 mt-3 md:justify-end">
                       <Calendar className="w-4 h-4" />
                       <span>
-                        {exp.startDate} - {exp.endDate}
+                        {t(exp.startDate)} - {t(exp.endDate)}
                       </span>
                     </div>
                     {exp.location && (
                       <div className="flex items-center gap-2 text-sm text-white/42 mt-2 md:justify-end">
                         <MapPin className="w-4 h-4" />
-                        <span>{exp.location}</span>
+                        <span>{t(exp.location)}</span>
                       </div>
                     )}
                   </div>
@@ -74,7 +77,7 @@ export default function Experience() {
                         {exp.description.map((desc, i) => (
                           <li key={i} className="flex items-start text-white/58">
                             <span className="text-brand-ink mr-2 font-bold">•</span>
-                            <span>{desc}</span>
+                            <span>{t(desc)}</span>
                           </li>
                         ))}
                       </ul>
@@ -91,7 +94,7 @@ export default function Experience() {
                                 key={i}
                                 className={`px-3 py-1 text-xs rounded-full border font-medium ${colors[i % colors.length]}`}
                               >
-                                {tech}
+                                {t(tech)}
                               </span>
                             );
                           })}
