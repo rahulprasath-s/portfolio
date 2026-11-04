@@ -8,7 +8,7 @@ import Image from "next/image";
 import { personalInfo } from "@/lib/data";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   return (
     <section
       id="home"
@@ -50,12 +50,16 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="hero-role mb-8 max-w-xl text-4xl font-black leading-none tracking-tight text-brand-ink sm:text-5xl lg:text-7xl"
+              className={`hero-role mb-8 max-w-xl font-black text-brand-ink ${
+                language === "de"
+                  ? "hero-role--de whitespace-pre-line text-4xl leading-[1.02] sm:text-5xl lg:text-6xl xl:text-7xl"
+                  : "text-4xl leading-none tracking-tight sm:text-5xl lg:text-7xl"
+              }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {t(personalInfo.title)}
+              {language === "de" ? t("AI & Automation Engineering") : personalInfo.title}
             </motion.p>
 
             {/* Social Media Icons */}

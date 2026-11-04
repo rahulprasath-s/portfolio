@@ -54,9 +54,9 @@ html {
   hyphens: auto;
 }
 
-html[lang="de"] .hero-role {
-  font-size: 2.25rem;
-  line-height: 1.15;
+.hero-role--de {
+  hyphens: none;
+  overflow-wrap: normal;
   letter-spacing: 0;
 }
 
