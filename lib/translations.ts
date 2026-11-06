@@ -58,6 +58,7 @@ export const german: Record<string, string> = {
   "Model Fallback": "Modell-Fallback",
   "Scheduled Pipelines": "Zeitgesteuerte Pipelines",
   "RSS & HTML Extraction": "RSS- & HTML-Extraktion",
+  "PDF Text Extraction": "PDF-Textextraktion",
   "Entity Resolution": "Entitätsauflösung",
   "Deduplication": "Duplikaterkennung",
   "JSON Validation": "JSON-Validierung",

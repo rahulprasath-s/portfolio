@@ -143,6 +143,7 @@ export const skills: Skill[] = [
   { name: "REST APIs", category: "Automation & Data" },
   { name: "Scheduled Pipelines", category: "Automation & Data" },
   { name: "RSS & HTML Extraction", category: "Automation & Data" },
+  { name: "PDF Text Extraction", category: "Automation & Data" },
   { name: "Entity Resolution", category: "Automation & Data" },
   { name: "Deduplication", category: "Automation & Data" },
   { name: "JSON Validation", category: "Automation & Data" },
@@ -163,6 +164,7 @@ export const skills: Skill[] = [
   // Web and storage
   { name: "FastAPI", category: "Web & Storage" },
   { name: "Streamlit", category: "Web & Storage" },
+  { name: "Web Speech API", category: "Web & Storage" },
   { name: "React", category: "Web & Storage" },
   { name: "Vue", category: "Web & Storage" },
   { name: "Next.js", category: "Web & Storage" },
@@ -182,6 +184,7 @@ export const skills: Skill[] = [
   { name: "Vercel", category: "Tools & Deployment" },
   { name: "Oracle Cloud", category: "Tools & Deployment" },
   { name: "Pandas", category: "Tools & Deployment" },
+  { name: "pdfplumber", category: "Tools & Deployment" },
   { name: "NumPy", category: "Tools & Deployment" },
   { name: "scikit-learn", category: "Tools & Deployment" },
   { name: "Claude Code", category: "Tools & Deployment" },
