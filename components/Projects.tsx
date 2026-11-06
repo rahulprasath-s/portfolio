@@ -68,6 +68,10 @@ export default function Projects() {
           <p className="mx-auto mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-white/52">
             {t("Public GitHub builds and professional work across AI engineering, automation, developer tooling, computer vision, data, and interactive web experiences.")}
           </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/60">
+            <span className="font-semibold text-brand-ink">{t("Currently building:")}</span>{" "}
+            {t("Narrator, Backtester, and an ML trading system.")}
+          </p>
         </motion.div>
 
         {/* Filter buttons */}

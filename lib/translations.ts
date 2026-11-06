@@ -70,6 +70,8 @@ export const german: Record<string, string> = {
   "Filesystem Watcher": "Dateisystemüberwachung",
   "Text-to-Speech": "Sprachausgabe",
   "Project Portfolio": "Projektübersicht",
+  "Currently building:": "Aktuell in Entwicklung:",
+  "Narrator, Backtester, and an ML trading system.": "Narrator, Backtester und ein ML-Tradingsystem.",
   "Public GitHub builds and professional work across AI engineering, automation, developer tooling, computer vision, data, and interactive web experiences.": "Öffentliche GitHub-Projekte und berufliche Arbeiten aus den Bereichen KI-Entwicklung, Automatisierung, Entwicklertools, Computer Vision, Datenverarbeitung und interaktive Webanwendungen.",
   "All": "Alle",
   "Other": "Sonstige",
