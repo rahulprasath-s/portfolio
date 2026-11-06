@@ -213,6 +213,15 @@ export interface Certification {
 
 export const projects: Project[] = [
   {
+    id: "narrator",
+    title: "Narrator",
+    description: "Python application that uses Claude to translate dense academic and philosophical text into clear spoken scripts, with PDF text extraction and browser-based voice playback.",
+    longDescription: "Built a Streamlit application that turns complex passages into editable narratives designed for listening. The Claude integration uses structured editing instructions to preserve arguments, qualifications, and technical distinctions while introducing everyday explanations. Browser-based speech synthesis provides voice selection, adjustable speed, and pause, resume, and stop controls. A separate pdfplumber parser extracts selected PDF pages locally, using font sizes and repeated page-position patterns to identify likely footnotes, headers, and footers while retaining removed text for review. Session state preserves generated scripts between interface interactions, with input validation and API error handling supporting the workflow.",
+    technologies: ["Python", "Streamlit", "Anthropic API", "pdfplumber", "JavaScript", "Web Speech API"],
+    category: "AI & Machine Learning",
+    githubUrl: "https://github.com/rahulprasath-s/Narrator",
+  },
+  {
     id: "ai-daily-brief",
     title: "AI Daily Brief",
     description: "Automated Python pipeline that uses NVIDIA NIM to rank and summarize AI news and model updates, publishing daily briefs to Notion with historical deduplication.",
