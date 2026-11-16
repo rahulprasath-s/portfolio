@@ -223,6 +223,7 @@ export const projects: Project[] = [
     longDescription: "Built a Streamlit application that turns complex passages into editable narratives designed for listening. The Claude integration uses structured editing instructions to preserve arguments, qualifications, and technical distinctions while introducing everyday explanations. Browser-based speech synthesis provides voice selection, adjustable speed, and pause, resume, and stop controls. A separate pdfplumber parser extracts selected PDF pages locally, using font sizes and repeated page-position patterns to identify likely footnotes, headers, and footers while retaining removed text for review. Session state preserves generated scripts between interface interactions, with input validation and API error handling supporting the workflow.",
     technologies: ["Python", "Streamlit", "Anthropic API", "pdfplumber", "JavaScript", "Web Speech API"],
     category: "AI & Machine Learning",
+    image: "/project-narrator.png",
     githubUrl: "https://github.com/rahulprasath-s/Narrator",
   },
   {
