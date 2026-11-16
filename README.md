@@ -35,7 +35,7 @@ Soccerkinetics · July 2026–October 2026 · Ingolstadt, Bavaria, Germany
 - **Automation and data:** Scheduled pipelines, REST APIs, n8n, background jobs, Redis/RQ, entity resolution, deduplication, GitHub Actions
 - **Computer vision and 3D:** YOLO, OpenCV, Core ML, MediaPipe, Three.js, React Three Fiber, geospatial APIs
 - **Web and storage:** Next.js, React, Vue, FastAPI, Node.js, PostgreSQL, SQLite, MongoDB, Qdrant
-- **Document and speech processing:** pdfplumber, PDF text extraction, browser speech synthesis with the Web Speech API
+- **Document and speech processing:** pdfplumber, local PDF text extraction, native macOS speech synthesis, and synchronized text highlighting
 - **Delivery:** Docker, Cloudflare Workers and Pages, Vercel, Oracle Cloud, Git
 
 ## Selected Projects
@@ -44,7 +44,7 @@ Currently working on **Narrator**, **Backtester**, and an **ML trading system**.
 
 | Project | Focus | Primary technologies |
 | --- | --- | --- |
-| [Narrator](https://github.com/rahulprasath-s/Narrator) | Editable spoken scripts from academic and philosophical text, with local PDF extraction and browser voice playback | Python, Streamlit, Anthropic API, pdfplumber, JavaScript, Web Speech API |
+| [Narrator](https://github.com/rahulprasath-s/Narrator) | Reading and listening studio with resumable Claude rewriting, Notion AI briefs, and native macOS speech | React, Python, Anthropic API, pdfplumber, Notion API, JavaScript, macOS Speech Synthesis |
 | [AI Daily Brief](https://github.com/rahulprasath-s/AI-Daily-Brief) | Daily AI news and model-update briefs with AI ranking and historical deduplication | Python, GitHub Actions, NVIDIA NIM, Notion API |
 | Podcast Summarizer | Background transcription, chapters, and structured podcast summaries | Next.js, FastAPI, PostgreSQL, Redis/RQ, Ollama |
 | Financial News Monitoring | German financial-news collection and stock-identifier resolution | Python, FastAPI, SQLAlchemy, SQLite, OpenFIGI |
