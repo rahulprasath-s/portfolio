@@ -162,6 +162,15 @@ export const skills: Skill[] = [
   { name: "Anthropic API", category: "LLM Applications" },
   { name: "NVIDIA NIM", category: "LLM Applications" },
 
+  // Model training
+  { name: "PyTorch", category: "Model Training & Evaluation" },
+  { name: "CUDA", category: "Model Training & Evaluation" },
+  { name: "Model Training", category: "Model Training & Evaluation" },
+  { name: "Model Evaluation", category: "Model Training & Evaluation" },
+  { name: "Point Cloud Processing", category: "Model Training & Evaluation" },
+  { name: "Synthetic-to-Real Evaluation", category: "Model Training & Evaluation" },
+  { name: "Hugging Face", category: "Model Training & Evaluation" },
+
   // Automation and data
   { name: "n8n", category: "Automation & Data" },
   { name: "REST APIs", category: "Automation & Data" },
