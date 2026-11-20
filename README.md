@@ -13,7 +13,7 @@ The site presents my experience, technical skills, research, and selected work a
 - Responsive single-page layout with smooth section navigation
 - Light and dark themes with saved user preference
 - Filterable project gallery with detailed project modals
-- Thirteen project case studies with detailed descriptions
+- Nine project case studies with detailed descriptions
 - Experience, education, skills, publication, and achievement sections
 - Contact form powered by a Next.js API route and Resend
 - Accessible semantic structure and mobile-friendly interactions
@@ -50,10 +50,6 @@ Currently working on **Narrator**, **Backtester**, and an **ML trading system**.
 | Financial News Monitoring | German financial-news collection and stock-identifier resolution | Python, FastAPI, SQLAlchemy, SQLite, OpenFIGI |
 | [Local Workspace Context Optimizer](https://github.com/rahulprasath-s/Local-Workspace-Context-Optimizer) | Privacy-first workspace snapshots and reusable context capsules | Python, Anthropic API, prompt caching |
 | [Archisight](https://github.com/rahulprasath-s/3D-Visualization-of-Buildings) | Map and satellite footprints converted into interactive 3D models | React, Three.js, Node.js, MongoDB |
-| [Mamba vs LSTM Forecasting](https://github.com/rahulprasath-s/mamba-vs-lstm-forecasting) | Reusable climate time-series forecasting benchmark | Python, PyTorch, CUDA |
-| [Crypto Dashboard CLI](https://github.com/rahulprasath-s/Crypto-Data-in-CLI) | Interactive cryptocurrency market terminal | TypeScript, Node.js, CoinGecko API |
-| [Quiz AI](https://github.com/rahulprasath-s/Quiz-AI) | Responsive typed quiz experience | Vue 3, TypeScript, Tailwind CSS |
-| [Claude Code Warmup](https://github.com/rahulprasath-s/claude-code-warmup) | Scheduled serverless AI warmup workflow | JavaScript, Vercel Cron, Anthropic API |
 | [Careflow Intelligence](https://github.com/rahulprasath-s/Careflow_Intelligence) | Private local RAG for medical PDFs | FastAPI, Streamlit, Qdrant, Ollama, Docker |
 | [FabricIRIS](https://github.com/rahulprasath-s/FabricIRIS-Textile-Defect) | Edge-AI textile defect inspection | YOLO, OpenCV, Core ML, Streamlit |
 | [Sign2Say](https://github.com/rahulprasath-s/Sign2Say) | Real-time gesture recognition and speech output | Python, OpenCV, MediaPipe, pyttsx3 |
