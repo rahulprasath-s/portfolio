@@ -52,6 +52,30 @@ export interface Project {
   category?: string;
 }
 
+export interface TrainedModel {
+  id: string;
+  name: string;
+  version: string;
+  task: string;
+  description: string;
+  training: string;
+  limitations: string;
+  evaluationNote: string;
+  environment: string[];
+  githubUrl: string;
+  weightsUrl: string;
+  architectureUrl: string;
+  resultsUrl: string;
+  licensingUrl: string;
+  results: {
+    dataset: string;
+    buildings: number;
+    tolerance: number;
+    cornerF1: number;
+    edgeF1: number;
+  }[];
+}
+
 export const personalInfo: PersonalInfo = {
   name: "Rahulprasath Selvaraj",
   title: "AI & Automation Engineer",
@@ -316,6 +340,33 @@ export const publications: Publication[] = [
     link: "https://ieeexplore.ieee.org/abstract/document/11108371",
   },
 ];
+export const trainedModels: TrainedModel[] = [
+  {
+    id: "koor",
+    name: "Koor",
+    version: "v1",
+    task: "Roof wireframe reconstruction",
+    description: "Trained a Point2Roof-based neural network that predicts roof corners, refines their positions, and connects them into a 3D wireframe from a single building's roof point cloud. Outputs are exported as JSON and OBJ; the model does not reconstruct walls, textures, addresses, or floor counts.",
+    training: "Prepared synthetic training data, adapted custom CUDA operations for the university's NVIDIA B200 GPUs, and completed training, evaluation, inference scripts, and a Hugging Face weights release. The architecture builds on Point2Roof; this release was trained on synthetic data only.",
+    limitations: "Performance drops sharply on real Building3D LiDAR without fine-tuning. Missing or extra connections still require inspection; 37 of 561 real buildings had no accepted edges. Strong synthetic scores do not establish reliable real-world reconstruction.",
+    evaluationNote: "Micro-F1 is pooled across buildings. Corner tolerance is a fraction of each building's maximum bounding-box span; an edge requires both endpoints to match. A 5% tolerance can hide positioning errors. These results use Koor's evaluator and a custom spatial holdout, so they are not directly comparable to published benchmarks.",
+    environment: ["Python 3.12", "PyTorch 2.14.1", "CUDA 13.2", "NVIDIA B200"],
+    githubUrl: "https://github.com/rahulprasath-s/Koor",
+    weightsUrl: "https://huggingface.co/Uruva/Koor-building-reconstruction-v1",
+    architectureUrl: "https://github.com/Li-Li-Whu/Point2Roof",
+    resultsUrl: "https://github.com/rahulprasath-s/Koor/blob/main/docs/results.md",
+    licensingUrl: "https://github.com/rahulprasath-s/Koor/blob/main/LICENSING.md",
+    results: [
+      { dataset: "Synthetic held-out test", buildings: 1600, tolerance: 1, cornerF1: 0.5874, edgeF1: 0.4079 },
+      { dataset: "Synthetic held-out test", buildings: 1600, tolerance: 2, cornerF1: 0.8891, edgeF1: 0.8372 },
+      { dataset: "Synthetic held-out test", buildings: 1600, tolerance: 5, cornerF1: 0.9549, edgeF1: 0.9445 },
+      { dataset: "Real Building3D, no fine-tuning", buildings: 561, tolerance: 1, cornerF1: 0.0032, edgeF1: 0.0000 },
+      { dataset: "Real Building3D, no fine-tuning", buildings: 561, tolerance: 2, cornerF1: 0.0212, edgeF1: 0.0028 },
+      { dataset: "Real Building3D, no fine-tuning", buildings: 561, tolerance: 5, cornerF1: 0.1770, edgeF1: 0.0482 },
+    ],
+  },
+];
+
 
 export const achievements: Achievement[] = [
   {
