@@ -79,7 +79,7 @@ export interface TrainedModel {
 export const personalInfo: PersonalInfo = {
   name: "Rahulprasath Selvaraj",
   title: "AI & Automation Engineer",
-  bio: "AI & Automation Engineer and M.Sc. Human & Artificial Intelligence student building LLM applications, automated data pipelines, and full-stack tools. My work spans local RAG, context engineering, computer vision, and geospatial visualization, with a focus on practical workflows, reliable integrations, and local deployment.",
+  bio: "AI & Automation Engineer and M.Sc. Human & Artificial Intelligence student building AI applications and training neural networks. My work spans LLM integration, local RAG, automated data pipelines, and 3D reconstruction, from data preparation and GPU training to evaluation and model release.",
   bioHighlights: [
     {
       label: "AI systems",
@@ -95,7 +95,7 @@ export const personalInfo: PersonalInfo = {
     },
     {
       label: "Engineering focus",
-      text: "Practical delivery, privacy-aware architecture, observable workflows, dependable integrations, and deployment-ready software.",
+      text: "Data preparation, CUDA compatibility, GPU training, synthetic-to-real evaluation, and model-weight releases alongside practical software delivery.",
     },
   ],
   email: "rahulprasathselvaraj@gmail.com",
