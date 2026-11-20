@@ -70,6 +70,7 @@ Use lowercase letters, hyphens for spaces:
 - Asset: `public/project-narrator.png`
 - Created with the built-in image generation tool.
 - Style: cinematic 16:9 reading studio, dark materials, amber and cyan lighting to match the existing project covers.
+- The original prompt below records the earlier macOS implementation. The cover is illustrative; Narrator now generates speech with KittenTTS Nano on the Python server's CPU, without a macOS-only speech dependency.
 
 <details>
 <summary>Generation prompt</summary>

@@ -35,7 +35,7 @@ Soccerkinetics · July 2026–October 2026 · Ingolstadt, Bavaria, Germany
 - **Automation and data:** Scheduled pipelines, REST APIs, n8n, background jobs, Redis/RQ, entity resolution, deduplication, GitHub Actions
 - **Computer vision and 3D:** YOLO, OpenCV, Core ML, MediaPipe, Three.js, React Three Fiber, geospatial APIs
 - **Web and storage:** Next.js, React, Vue, FastAPI, Node.js, PostgreSQL, SQLite, MongoDB, Qdrant
-- **Document and speech processing:** pdfplumber, local PDF text extraction, native macOS speech synthesis, and synchronized text highlighting
+- **Document and speech processing:** pdfplumber, local PDF text extraction, CPU-based neural speech with KittenTTS Nano, and synchronized text highlighting
 - **Delivery:** Docker, Cloudflare Workers and Pages, Vercel, Oracle Cloud, Git
 
 ## Selected Projects
@@ -44,7 +44,7 @@ Currently working on **Narrator**, **Backtester**, and an **ML trading system**.
 
 | Project | Focus | Primary technologies |
 | --- | --- | --- |
-| [Narrator](https://github.com/rahulprasath-s/Narrator) | Reading and listening studio with resumable Claude rewriting, Notion AI briefs, and native macOS speech | React, Python, Anthropic API, pdfplumber, Notion API, JavaScript, macOS Speech Synthesis |
+| [Narrator](https://github.com/rahulprasath-s/Narrator) | Reading and listening studio with resumable Claude rewriting, Notion AI briefs, and local neural speech | React, Python, Anthropic API, KittenTTS Nano, pdfplumber, Notion API, JavaScript |
 | [AI Daily Brief](https://github.com/rahulprasath-s/AI-Daily-Brief) | Daily AI news and model-update briefs with AI ranking and historical deduplication | Python, GitHub Actions, NVIDIA NIM, Notion API |
 | Podcast Summarizer | Background transcription, chapters, and structured podcast summaries | Next.js, FastAPI, PostgreSQL, Redis/RQ, Ollama |
 | Financial News Monitoring | German financial-news collection and stock-identifier resolution | Python, FastAPI, SQLAlchemy, SQLite, OpenFIGI |
@@ -57,6 +57,12 @@ Currently working on **Narrator**, **Backtester**, and an **ML trading system**.
 | [Careflow Intelligence](https://github.com/rahulprasath-s/Careflow_Intelligence) | Private local RAG for medical PDFs | FastAPI, Streamlit, Qdrant, Ollama, Docker |
 | [FabricIRIS](https://github.com/rahulprasath-s/FabricIRIS-Textile-Defect) | Edge-AI textile defect inspection | YOLO, OpenCV, Core ML, Streamlit |
 | [Sign2Say](https://github.com/rahulprasath-s/Sign2Say) | Real-time gesture recognition and speech output | Python, OpenCV, MediaPipe, pyttsx3 |
+
+### Narrator Speech Runtime
+
+Narrator uses the Luna and Hugo voices from [KittenTTS Nano](https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8), a 15-million-parameter model running on the Python server's CPU. Its approximately 25 MB download is cached locally; speech inference then runs offline without a speech API key, GPU, or PyTorch. Audio is generated on demand and played as one continuous recording in Chrome or Safari. Seven-word highlighting uses predicted phoneme timings mapped to words, rather than forced alignment. Voice changes retain the reading position and require generating audio for the selected voice again.
+
+Claude document rewriting still consumes API credits. Documents, translations, and recordings are temporary in-memory session data; only the downloaded model remains cached between sessions.
 
 ## Education
 
