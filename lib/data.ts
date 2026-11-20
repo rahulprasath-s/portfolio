@@ -57,6 +57,8 @@ export interface TrainedModel {
   name: string;
   version: string;
   task: string;
+  summary: string;
+  caveat: string;
   description: string;
   training: string;
   limitations: string;
@@ -355,6 +357,8 @@ export const trainedModels: TrainedModel[] = [
     name: "Koor",
     version: "v1",
     task: "Roof wireframe reconstruction",
+    summary: "Point2Roof-based model trained on NVIDIA B200 GPUs to turn a building's roof point cloud into a 3D wireframe.",
+    caveat: "Synthetic-only training; real LiDAR performance remains limited.",
     description: "Trained a Point2Roof-based neural network that predicts roof corners, refines their positions, and connects them into a 3D wireframe from a single building's roof point cloud. Outputs are exported as JSON and OBJ; the model does not reconstruct walls, textures, addresses, or floor counts.",
     training: "Prepared synthetic training data, adapted custom CUDA operations for the university's NVIDIA B200 GPUs, and completed training, evaluation, inference scripts, and a Hugging Face weights release. The architecture builds on Point2Roof; this release was trained on synthetic data only.",
     limitations: "Performance drops sharply on real Building3D LiDAR without fine-tuning. Missing or extra connections still require inspection; 37 of 561 real buildings had no accepted edges. Strong synthetic scores do not establish reliable real-world reconstruction.",
