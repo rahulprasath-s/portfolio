@@ -28,6 +28,7 @@ export default function Header() {
     { name: t("Experience"), href: "#experience" },
     { name: t("Skills"), href: "#skills" },
     { name: t("Projects"), href: "#projects" },
+    { name: t("Models"), href: "#models" },
   ];
 
   return (
