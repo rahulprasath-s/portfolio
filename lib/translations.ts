@@ -59,7 +59,7 @@ export const german: Record<string, string> = {
   "Scheduled Pipelines": "Zeitgesteuerte Pipelines",
   "RSS & HTML Extraction": "RSS- & HTML-Extraktion",
   "PDF Text Extraction": "PDF-Textextraktion",
-  "macOS Speech Synthesis": "macOS-Sprachsynthese",
+  "Local Neural TTS": "Lokale neuronale Sprachsynthese",
   "Audio Synchronization": "Audiosynchronisierung",
   "Entity Resolution": "Entitätsauflösung",
   "Deduplication": "Duplikaterkennung",

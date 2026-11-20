@@ -164,7 +164,8 @@ export const skills: Skill[] = [
   // Web and storage
   { name: "FastAPI", category: "Web & Storage" },
   { name: "Streamlit", category: "Web & Storage" },
-  { name: "macOS Speech Synthesis", category: "Web & Storage" },
+  { name: "Local Neural TTS", category: "Web & Storage" },
+  { name: "KittenTTS Nano", category: "Web & Storage" },
   { name: "Audio Synchronization", category: "Web & Storage" },
   { name: "React", category: "Web & Storage" },
   { name: "Vue", category: "Web & Storage" },
