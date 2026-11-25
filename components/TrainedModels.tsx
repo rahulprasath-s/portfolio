@@ -80,7 +80,7 @@ export default function TrainedModels() {
                       <ul className="flex flex-wrap gap-2">
                         {model.environment.map((item) => <li key={item} className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/70">{item}</li>)}
                       </ul>
-                      <p className="mt-3 text-sm leading-7 text-white/60">{t("Custom CUDA operations must be compiled before inference. Other GPU setups have not been verified.")}</p>
+                      <p className="mt-3 text-sm leading-7 text-white/60">{t("Custom CUDA operations must be compiled before inference. See each release's documentation for verified environments.")}</p>
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function TrainedModels() {
                     <a href={model.resultsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-brand-ink underline-offset-4 hover:underline">{t("Evaluation methodology")}<ExternalLink aria-hidden="true" className="h-3.5 w-3.5" /></a>
                     <a href={model.licensingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/60 underline-offset-4 hover:underline">{t("Licensing & dataset terms")}<ExternalLink aria-hidden="true" className="h-3.5 w-3.5" /></a>
                   </div>
-                  <p className="mt-3 text-xs leading-6 text-white/60">{t("Koor code and weights do not yet have an assigned license; training-data terms remain to be confirmed. Point2Roof's upstream software license is recorded separately.")}</p>
+                  <p className="mt-3 text-xs leading-6 text-white/60">{t("Public model availability does not imply unrestricted commercial use. Review the documented model licensing, dataset terms, and upstream Point2Roof license.")}</p>
                 </div>
               </details>
             </article>
